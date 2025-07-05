@@ -5,18 +5,46 @@ const Popup = () => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(true), 1500); // show after 1.5 sec
+    const timer = setTimeout(() => setShow(true), 1500);
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    if (show) {
+      // Disable background scroll
+      document.body.style.overflow = "hidden";
+
+      // Disable Escape key
+      const handleKeyDown = (e) => {
+        if (e.key === "Escape") {
+          e.preventDefault();
+        }
+      };
+      window.addEventListener("keydown", handleKeyDown);
+
+      return () => {
+        document.body.style.overflow = "auto";
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    }
+  }, [show]);
+
   if (!show) return null;
 
+  const handleClose = () => {
+    setShow(false);
+    document.body.style.overflow = "auto";
+  };
+
   return (
-    <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/50 px-4">
+    <div
+      className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/50 px-4"
+      onClick={(e) => e.stopPropagation()} // prevent closing if clicked on backdrop
+    >
       <div className="bg-white dark:bg-gray-900 text-black dark:text-white rounded-lg shadow-xl max-w-sm w-full p-6 relative">
         <button
           className="absolute top-2 right-2 text-gray-400 hover:text-red-500"
-          onClick={() => setShow(false)}
+          onClick={handleClose}
         >
           <X size={20} />
         </button>
@@ -25,7 +53,7 @@ const Popup = () => {
           Thanks for visiting my portfolio. Hope you enjoy exploring it!
         </p>
         <button
-          onClick={() => setShow(false)}
+          onClick={handleClose}
           className="w-full px-4 py-2 text-sm rounded-md bg-black text-white dark:bg-white dark:text-black"
         >
           Got it
