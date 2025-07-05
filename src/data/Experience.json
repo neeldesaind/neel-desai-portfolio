@@ -1,0 +1,18 @@
+[
+  {
+    "company": "Nirvan Infotech",
+    "role": "Web Development Intern",
+    "type": "On-site",
+    "location": "Bakrol, Anand, Gujarat",
+    "duration": "Dec 2024 – Apr 2025",
+    "logo": "/assets/experience/nirvan_infotech.png"
+  },
+  {
+    "company": "Internshala",
+    "role": "Internshala Student Partner",
+    "type": "Remote",
+    "location": "Remote",
+    "duration": "Dec 2023 – Jan 2024",
+    "logo": "/assets/experience/internshala_logo.jpg"
+  }
+]

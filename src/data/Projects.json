@@ -1,0 +1,133 @@
+[
+  {
+    "title": "Thousands Shade Art",
+    "type": "MERN",
+    "description": "Thousand Shades of Art is a full-stack web platform designed for custom art creation and client interaction. The platform allows users to request personalized digital sketches, submit reviews, and explore artwork — all seamlessly integrated with a dynamic, responsive user experience.",
+    "image": "/assets/projects/tsa.jpg",
+    "viewLink": "https://thousandshadesart.vercel.app/",
+    "skills": [
+      "/assets/skills/react.png",
+      "/assets/skills/nodejs.png",
+      "/assets/skills/mongodb.png",
+      "/assets/skills/expressjs.png",
+      "/assets/skills/tailwind.png"
+    ]
+  },
+  {
+    "title": "Keval's Portfolio",
+    "type": "React + Tailwind",
+    "description": "I designed and developed a fully responsive, modern personal portfolio website for my client Keval Shah, aimed at professionally showcasing his skills, experience, and achievements.",
+    "image": "/assets/projects/keval.jpg",
+    "viewLink": "https://kevalshah.vercel.app/",
+    "skills": [
+      "/assets/skills/react.png",
+      "/assets/skills/tailwind.png"
+    ]
+  },
+  {
+    "title": "B & V Book Club",
+    "type": "MERN",
+    "description": "Freelance project for my client",
+    "image": "/assets/projects/b&v.jpg",
+    "viewLink": "https://bvbookclub.vercel.app/",
+    "skills": [
+      "/assets/skills/react.png",
+      "/assets/skills/nodejs.png",
+      "/assets/skills/mongodb.png",
+      "/assets/skills/expressjs.png"
+    ]
+  },
+  {
+    "title": "Portfolio Website",
+    "type": "MERN",
+    "description": "Portfolio With Database & Admin Panel",
+    "image": "/assets/projects/portfolio.png",
+    "viewLink": "https://mern-portfolio-lilac.vercel.app/portfolio",
+    "skills": [
+      "/assets/skills/react.png",
+      "/assets/skills/nodejs.png",
+      "/assets/skills/mongodb.png",
+      "/assets/skills/expressjs.png",
+      "/assets/skills/tailwind.png"
+    ]
+  },
+  {
+    "title": "Kissan Plus",
+    "type": "MERN",
+    "description": "Kissan-Plus is a full-stack application designed to support and empower farmers with tools and resources. It features a Vite-powered React frontend and a Node.js/Express backend.",
+    "image": "/assets/projects/kissanplus.jpg",
+    "viewLink": "https://github.com/neelhdesai/prj_kissanplus_MCA_04",
+    "skills": [
+      "/assets/skills/react.png",
+      "/assets/skills/nodejs.png",
+      "/assets/skills/mongodb.png",
+      "/assets/skills/expressjs.png",
+      "/assets/skills/tailwind.png"
+    ]
+  },
+  {
+    "title": "Eduverse - Elearning Portal",
+    "type": "MERN",
+    "description": "E-learning portal is a web-based application developed using the MERN (MongoDB, Express.js, React.js, Node.js) stack, designed to provide an efficient and user-friendly learning experience. The platform offers three distinct roles: Visitor, Student, and Admin, each with unique functionalities.",
+    "image": "/assets/projects/eduverse.png",
+    "viewLink": "https://github.com/neelhdesai/prj_eduverse_MCA_03",
+    "skills": [
+      "/assets/skills/react.png",
+      "/assets/skills/nodejs.png",
+      "/assets/skills/mongodb.png",
+      "/assets/skills/expressjs.png",
+      "/assets/skills/tailwind.png"
+    ]
+  },
+  {
+    "title": "Github Scout",
+    "type": "Flutter",
+    "description": "A sleek Flutter app for searching GitHub profiles and viewing detailed user information.",
+    "image": "/assets/projects/github.png",
+    "viewLink": "https://github.com/neelhdesai/flutter-github-scout",
+    "skills": ["/assets/skills/flutter.png"]
+  },
+  {
+    "title": "Sip & Lumpsum Calculator",
+    "type": "Flutter",
+    "description": "The SIP & Lumpsum Calculator is a Flutter application designed to help users calculate their potential returns from Systematic Investment Plans (SIP) and lump sum investments.",
+    "image": "/assets/projects/sip-calc.png",
+    "viewLink": "https://github.com/neelhdesai/flutter-sip-calculator",
+    "skills": ["/assets/skills/flutter.png"]
+  },
+  {
+    "title": "To Do List",
+    "type": "Flutter",
+    "description": "A simple Todo application built with Flutter that allows users to manage their tasks effectively. Users can create, edit, delete, and mark tasks as completed while tracking due dates and remaining time for tasks.",
+    "image": "/assets/projects/to-do-list.png",
+    "viewLink": "https://github.com/neelhdesai/flutter-to-do-list",
+    "skills": ["/assets/skills/flutter.png"]
+  },
+  {
+    "title": "Tic tac toe",
+    "type": "Flutter",
+    "description": "A full-featured campus placement system with role-based access for students and recruiters, real-time job postings, and resume filtering.",
+    "image": "/assets/projects/tic-tac-toe.png",
+    "viewLink": "https://github.com/neelhdesai/flutter-tic-tac-toe",
+    "skills": ["/assets/skills/flutter.png"]
+  },
+  {
+    "title": "Weather App",
+    "type": "Android",
+    "description": "A simple weather application built for Android that provides current weather data based on user location or city name input. It utilizes the OpenWeatherMap API to fetch weather details, including temperature, humidity, wind speed, sunrise, and sunset times. The app also features dynamic background animations and images based on the weather conditions.",
+    "image": "/assets/projects/weather-app.png",
+    "viewLink": "https://github.com/neelhdesai/weather_app_android",
+    "skills": ["/assets/skills/android.png"]
+  },
+  {
+    "title": "Library Management Applications",
+    "type": "Android",
+    "description": "The Library Management System is a comprehensive platform that enables students and librarians to manage library-related tasks efficiently. It features functionalities for issuing books, paying fines, and managing book inventories, making library operations more streamlined and user-friendly.",
+    "image": "/assets/projects/library-management-system.png",
+    "viewLink": "https://github.com/neelhdesai/prj_library_management_BSIT",
+    "skills": [
+      "/assets/skills/android.png",
+      "/assets/skills/firebase.png"
+    ]
+  }
+]

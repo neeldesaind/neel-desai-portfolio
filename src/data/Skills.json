@@ -1,0 +1,19 @@
+[
+  { "name": "HTML5", "image": "/assets/skills/html5.png" },
+  { "name": "CSS3", "image": "/assets/skills/css3.png" },
+  { "name": "JavaScript", "image": "/assets/skills/js.png" },
+  { "name": "React", "image": "/assets/skills/react.png" },
+  { "name": "Node.js", "image": "/assets/skills/nodejs.png" },
+  { "name": "MongoDB", "image": "/assets/skills/mongodb.png" },
+  { "name": "Express.js", "image": "/assets/skills/expressjs.png" },
+  { "name": "Postman", "image": "/assets/skills/postman.png" },
+  { "name": "Bootstrap", "image": "/assets/skills/bootstrap.png" },
+  { "name": "Tailwind CSS", "image": "/assets/skills/tailwind.png" },
+  { "name": "Android", "image": "/assets/skills/android.png" },
+  { "name": "Kotlin", "image": "/assets/skills/kotlin.png" },
+  { "name": "Firebase", "image": "/assets/skills/firebase.png" },
+  { "name": "Oracle SQL", "image": "/assets/skills/sql.png" },
+  { "name": "CPP", "image": "/assets/skills/cpp.png" },
+  { "name": "Github", "image": "/assets/skills/github.png" },
+  { "name": "Git", "image": "/assets/skills/git.png" }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Vishalsinh Mahida",
+    "role": "Client",
+    "date": "June 21, 2025",
+    "photo": "/assets/testimonials/vishal.png",
+    "text": "I had the pleasure of working with Neel Desai as a client, and I can confidently say he is one of the most dedicated and skilled web developers I’ve come across. Neel recently delivered a complete website project for my brand, Thousands Shades, and I couldn't be happier with the outcome. From the beginning, Neel showed a deep understanding of modern web design, responsiveness, and functionality. He took the time to understand my vision and translated it into a beautifully designed, user-friendly, and fully functional website. His attention to detail, timely communication, and problem-solving abilities made the entire development process smooth and stress-free. What impressed me the most was Neel’s commitment to quality. He didn’t just deliver a website—he crafted a digital experience that truly represents my brand's identity. If you're looking for a reliable and creative web developer who delivers real results, I highly recommend Neel Desai."
+  },
+  {
+    "name": "Bhavyarajsinh Chavda",
+    "role": "Client",
+    "date": "June 17, 2025",
+    "photo": "/assets/testimonials/bhavyaraj.jpg",
+    "text": "I had the privilege of collaborating with Neel on the B&V Book Club project, where he developed both the website and a powerful admin panel that allows us to easily manage and update content. Any updates we make through the admin panel are instantly reflected on the live website, ensuring our platform stays current without the need for technical support."
+  },
+  {
+    "name": "Veer Shah",
+    "role": "Mentor",
+    "date": "June 7, 2025",
+    "photo": "/assets/testimonials/veer.jpg",
+    "text": "I had the pleasure of working with Neel during their MERN Stack Development internship. He demonstrated strong technical skills in React, Node.js, MongoDB, and Express, and consistently delivered clean, efficient code. His proactive attitude, quick learning ability, and dedication to meeting deadlines made him a valuable team member. Also his abilities with business understanding, planning and logic development were upto the point. I'm confident he will excel in any role he pursue."
+  },
+  {
+    "name": "Yash Patel",
+    "role": "Worked Together",
+    "date": "May 5, 2025",
+    "photo": "/assets/testimonials/yash.jpg",
+    "text": "I had the pleasure of working with Neel Desai on a collaborative project where his professionalism, technical expertise, and team-oriented mindset stood out from the start. Throughout our time working together, Neel consistently demonstrated strong skills in full-stack development using the MERN stack, along with a clear commitment to delivering high-quality results. What truly impressed me was Neel’s ability to tackle complex challenges with a calm, solution-driven approach. He was always proactive, dependable, and open to feedback—making him not only a valuable contributor but also a great teammate. If you're looking for someone who combines technical excellence with strong collaboration and communication skills, I highly recommend Neel. It was a pleasure working with him, and I’d gladly do so again in the future."
+  },
+  {
+    "name": "Dhaval Chhayla",
+    "role": "Teacher",
+    "date": "September 30, 2024",
+    "photo": "/assets/testimonials/dhaval.jpg",
+    "text": "Neel displayed excellent leadership skills while working on our Eduverse eLearning portal project. He was always approachable, organized, and ready to help the team whenever needed. Neel’s ability to guide the project to completion and support every team member made him an invaluable leader. I’m sure he’ll bring the same dedication and energy to any future role."
+  },
+  {
+    "name": "Keval Shah",
+    "role": "Mentor",
+    "date": "September 23, 2024",
+    "photo": "/assets/testimonials/keval.jpg",
+    "text": "Neel Desai is a highly skilled and passionate Mobile App Developer with a keen interest in Data Science. I've had the pleasure of working alongside Neel, and his commitment to creating innovative, user-friendly mobile applications is truly remarkable. He is always eager to explore new technologies, continuously honing his skills. Neel’s collaborative nature and attention to detail make him an exceptional team member. I highly recommend Neel to anyone seeking a dedicated and forward-thinking developer!"
+  },
+  {
+    "name": "Kaushik Trivedi",
+    "role": "Teacher",
+    "date": "February 11, 2024",
+    "photo": "/assets/testimonials/kaushik.jpg",
+    "text": "As a teacher I am pleased to collaborate with Neel, who is consistently demonstrating sincerity and diligence in his academic journey. During his time in my classes, Neel stood out for his unwavering commitment to learning and academic excellence. He approached every task with enthusiasm and a strong work ethic, consistently going above and beyond expectations to produce high-quality work. He not only excelled academically but also contributed positively to the classroom environment. He actively participated in discussions, asked insightful questions, and collaborated effectively with peers. I have no doubt that he will continue to excel in his future endeavors. He possesses the qualities of a dedicated and motivated creative individual, capable of making significant contributions to any academic or professional setting."
+  },
+  {
+    "name": "Dev Patel",
+    "role": "Worked Together",
+    "date": "November 22, 2023",
+    "photo": "/assets/testimonials/dev.jpg",
+    "text": "I had the pleasure of collaborating with Neel Desai on an Android app for library management at CHARUSAT University. His technical prowess, creativity and collaborative spirit were instrumental in the project's success. I highly recommend Neel Desai for his exceptional skills and positive attitude in any development endeavor."
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "degree": "Master of Computer Applications (MCA)",
+    "institution": "Charotar University Of Science & Technology",
+    "year": "2025",
+    "grade": "Distinction",
+    "image": "/assets/logo/education.jpg"
+  },
+  {
+    "degree": "Bachelor of Science In Information Technology (BS.IT)",
+    "institution": "Charotar University Of Science & Technology",
+    "year": "2023",
+    "grade": "Distinction",
+    "image": "/assets/logo/education.jpg"
+  }
+]
