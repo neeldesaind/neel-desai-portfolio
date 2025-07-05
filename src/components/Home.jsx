@@ -20,8 +20,26 @@ const Home = () => {
       className="min-h-screen mt-20 flex items-center justify-center bg-gray-50 dark:bg-black px-6 py-20"
     >
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
+        {/* Right: Image (shown first on mobile) */}
+        <div className="flex justify-center md:justify-end w-full order-1 md:order-2">
+          {homeData ? (
+            <img
+              src={homeData.image}
+              alt="Profile"
+              draggable="false"
+              className="w-full max-w-[280px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] aspect-square object-cover rounded-2xl shadow-xl border border-gray-300 dark:border-gray-700 transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-2xl"
+            />
+          ) : (
+            <SkeletonLoader
+              width="w-[300px]"
+              height="h-[300px]"
+              rounded="rounded-xl"
+            />
+          )}
+        </div>
+
         {/* Left: Text */}
-        <div className="text-center md:text-left space-y-6">
+        <div className="text-center md:text-left space-y-6 order-2 md:order-1">
           {homeData ? (
             <>
               <h1 className="text-5xl sm:text-6xl font-semibold text-gray-900 dark:text-white leading-tight">
@@ -33,7 +51,7 @@ const Home = () => {
               <p className="text-lg text-gray-700 dark:text-gray-300">
                 {homeData.title}
               </p>
-              <p className="text-md text-gray-500 dark:text-gray-400 max-w-xl">
+              <p className="text-md text-gray-500 dark:text-gray-400 max-w-xl mx-auto md:mx-0">
                 {homeData.description}
               </p>
 
@@ -71,24 +89,6 @@ const Home = () => {
                 />
               </div>
             </div>
-          )}
-        </div>
-
-        {/* Right: Image */}
-        <div className="flex justify-center md:justify-end w-full">
-          {homeData ? (
-            <img
-              src={homeData.image}
-              alt="Profile"
-              draggable="false"
-              className="w-full max-w-[280px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] aspect-square object-cover rounded-2xl shadow-xl border border-gray-300 dark:border-gray-700 transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-2xl"
-            />
-          ) : (
-            <SkeletonLoader
-              width="w-[300px]"
-              height="h-[300px]"
-              rounded="rounded-xl"
-            />
           )}
         </div>
       </div>
