@@ -4,5 +4,5 @@
   { "name": "Projects", "href": "#projects" },
   { "name": "Testimonials", "href": "#testimonials" },
   { "name": "Contact Me", "href": "#contact" },
-  { "name": "Download CV", "href": "/cv.pdf", "download": true }
+  { "name": "Download CV", "href": "/assets/resume/RESUME_NEEL_DESAI.pdf", "download": true }
 ]
