@@ -11,13 +11,16 @@ const Popup = () => {
 
   useEffect(() => {
     if (show) {
-      // Disable background scroll
       document.body.style.overflow = "hidden";
 
-      // Disable Escape key
       const handleKeyDown = (e) => {
         if (e.key === "Escape") {
           e.preventDefault();
+        }
+        if (e.key === "Enter") {
+          e.preventDefault();
+          setShow(false);
+          document.body.style.overflow = "auto";
         }
       };
       window.addEventListener("keydown", handleKeyDown);
@@ -39,11 +42,11 @@ const Popup = () => {
   return (
     <div
       className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/50 px-4"
-      onClick={(e) => e.stopPropagation()} // prevent closing if clicked on backdrop
+      onClick={(e) => e.stopPropagation()}
     >
       <div className="bg-white dark:bg-gray-900 text-black dark:text-white rounded-lg shadow-xl max-w-sm w-full p-6 relative">
         <button
-          className="absolute top-2 right-2 text-gray-400 hover:text-red-500"
+          className="absolute top-2 right-2 text-gray-400 hover:text-red-500 cursor-pointer"
           onClick={handleClose}
         >
           <X size={20} />
@@ -54,7 +57,7 @@ const Popup = () => {
         </p>
         <button
           onClick={handleClose}
-          className="w-full px-4 py-2 text-sm rounded-md bg-black text-white dark:bg-white dark:text-black"
+          className="w-full px-4 py-2 text-sm rounded-md bg-black text-white dark:bg-white dark:text-black cursor-pointer"
         >
           Got it
         </button>
