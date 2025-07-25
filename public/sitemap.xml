@@ -5,30 +5,34 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-<url>
-      <loc>https://neelhdesai.vercel.app</loc>
-  <lastmod>2025-07-24T14:30:53+00:00</lastmod>
-</url>
-  <loc>https://neelhdesai.vercel.app/</loc>
-  <lastmod>2025-07-24T14:30:53+00:00</lastmod>
-</url>
+  <url>
+    <loc>https://neelhdesai.vercel.app</loc>
+    <lastmod>2025-07-24T14:30:53+00:00</lastmod>
+  </url>
 
-<url>
-  <loc>https://neelhdesai.vercel.app/#about</loc>
-  <lastmod>2025-07-24T14:30:53+00:00</lastmod>
-</url>
+  <url>
+    <loc>https://neelhdesai.vercel.app/</loc>
+    <lastmod>2025-07-24T14:30:53+00:00</lastmod>
+  </url>
 
-<url>
-  <loc>https://neelhdesai.vercel.app/#projects</loc>
-  <lastmod>2025-07-24T14:30:53+00:00</lastmod>
-</url>
-<url>
-  <loc>https://neelhdesai.vercel.app/#testimonials</loc>
-  <lastmod>2025-07-24T14:30:53+00:00</lastmod>
-</url>
-<url>
-  <loc>https://neelhdesai.vercel.app/#contact</loc>
-  <lastmod>2025-07-24T14:30:53+00:00</lastmod>
-</url>
+  <url>
+    <loc>https://neelhdesai.vercel.app/#about</loc>
+    <lastmod>2025-07-24T14:30:53+00:00</lastmod>
+  </url>
+
+  <url>
+    <loc>https://neelhdesai.vercel.app/#projects</loc>
+    <lastmod>2025-07-24T14:30:53+00:00</lastmod>
+  </url>
+
+  <url>
+    <loc>https://neelhdesai.vercel.app/#testimonials</loc>
+    <lastmod>2025-07-24T14:30:53+00:00</lastmod>
+  </url>
+
+  <url>
+    <loc>https://neelhdesai.vercel.app/#contact</loc>
+    <lastmod>2025-07-24T14:30:53+00:00</lastmod>
+  </url>
 
 </urlset>
