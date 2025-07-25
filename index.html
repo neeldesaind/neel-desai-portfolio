@@ -39,6 +39,15 @@
       ]
     }
     </script>
+    <script>
+      // Detect 'Neel' in the page URL or content
+      document.addEventListener('DOMContentLoaded', function() {
+        if (document.body.innerHTML.includes('Neel')) {
+          document.querySelector('meta[name="description"]').setAttribute('content', 'Explore the official portfolio of Neel Desai, a MERN Stack Developer, showcasing projects, skills, and a passion for coding.');
+          document.querySelector('meta[name="keywords"]').setAttribute('content', 'Neel Desai, MERN developer, portfolio, React, Node.js, web development, full stack developer');
+        }
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>
