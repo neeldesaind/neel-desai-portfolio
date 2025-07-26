@@ -163,7 +163,7 @@ const Projects = () => {
                             onClick={() =>
                               openScreenshotModal(project.screenshots)
                             }
-                            className="inline-block px-4 py-2 text-sm font-medium text-white bg-black dark:bg-white dark:text-black rounded-md hover:opacity-90 transition"
+                            className="cursor-pointer inline-block px-4 py-2 text-sm font-medium text-white bg-black dark:bg-white dark:text-black rounded-md hover:opacity-90 transition"
                           >
                             View Screenshots
                           </button>
