@@ -4,83 +4,53 @@ import SkeletonLoader from './SkeletonLoader';
 
 const About = () => {
   const [about, setAbout] = useState(null);
-  const [isMobile, setIsMobile] = useState(false);
-  const [color, setColor] = useState(false); // false = grayscale, true = color
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setAbout(aboutData);
     }, 1000);
 
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => clearTimeout(timer);
   }, []);
-
-  const handleImageClick = () => {
-    if (isMobile) {
-      setColor((prev) => !prev);
-    }
-  };
 
   return (
     <section id="about" className="bg-white dark:bg-black py-20 px-4 sm:px-6 md:px-10">
-      {/* Desktop layout: flex-row, Mobile layout: flex-col */}
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12">
-        {/* Image - mobile: order-2, desktop: order-1 */}
-        <div className="w-full md:w-1/2 flex justify-center md:justify-start order-2 md:order-1">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-center gap-10 md:gap-14">
+        
+        {/* Image Section */}
+        <div className="w-full md:w-1/2 flex justify-center md:justify-end">
           {about ? (
-            <img
-              src={about.image}
-              alt="About Neel"
-              onClick={handleImageClick}
-              className={`w-48 sm:w-56 md:w-64 h-auto object-cover rounded-xl border dark:border-gray-700
-                transition-filter duration-300
-                ${isMobile
-                  ? color
-                    ? 'filter-none'
-                    : 'filter grayscale'
-                  : 'filter grayscale hover:filter-none'}
-              `}
-              style={{ cursor: isMobile ? 'pointer' : 'default' }}
-            />
+            <a href="/#projects">
+  <img
+    src={about.image}
+    alt="About Neel"
+    className="w-full max-w-md md:max-w-lg h-auto object-contain rounded-2xl cursor-pointer hover:opacity-90 transition"
+  />
+</a>
           ) : (
-            <SkeletonLoader width="w-48 sm:w-56 md:w-64" height="h-64" rounded="rounded-xl" />
+            <SkeletonLoader width="w-full max-w-lg" height="h-64" rounded="rounded-2xl" />
           )}
         </div>
 
-        {/* Text: Title then Bio - mobile: order-1/title, order-3/bio | desktop: order-2/title+bio */}
-        <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left space-y-4 order-1 md:order-2">
-          {/* Title */}
-          <div>
-            {about ? (
-              <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 dark:text-white mb-2">
+        {/* Text Section */}
+        <div className="w-full md:w-1/2 text-center md:text-left space-y-4">
+          {about ? (
+            <>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
                 {about.title}
               </h2>
-            ) : (
-              <SkeletonLoader width="w-48" height="h-8" />
-            )}
-          </div>
-
-          {/* Bio */}
-          <div className="max-w-xl">
-            {about ? (
-              <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-xl mx-auto md:mx-0">
                 {about.bio}
               </p>
-            ) : (
-              <div className="space-y-4">
-                <SkeletonLoader width="w-full" height="h-4" />
-                <SkeletonLoader width="w-4/5" height="h-4" />
-                <SkeletonLoader width="w-3/4" height="h-4" />
-              </div>
-            )}
-          </div>
+            </>
+          ) : (
+            <div className="space-y-4">
+              <SkeletonLoader width="w-48" height="h-8" />
+              <SkeletonLoader width="w-full" height="h-4" />
+              <SkeletonLoader width="w-4/5" height="h-4" />
+              <SkeletonLoader width="w-3/4" height="h-4" />
+            </div>
+          )}
         </div>
       </div>
     </section>
