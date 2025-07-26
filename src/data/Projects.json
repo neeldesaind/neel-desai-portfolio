@@ -5,6 +5,10 @@
     "description": "Thousand Shades of Art is a full-stack web platform designed for custom art creation and client interaction. The platform allows users to request personalized digital sketches, submit reviews, and explore artwork — all seamlessly integrated with a dynamic, responsive user experience.",
     "image": "/assets/projects/tsa.jpg",
     "viewLink": "https://thousandshadesart.vercel.app/",
+     "screenshots": [
+    "/assets/screenshots/tsa-01.png",
+    "/assets/screenshots/tsa-02.png"
+  ],
     "skills": [
       "/assets/skills/react.png",
       "/assets/skills/nodejs.png",
@@ -19,6 +23,10 @@
     "description": "I designed and developed a fully responsive, modern personal portfolio website for my client Keval Shah, aimed at professionally showcasing his skills, experience, and achievements.",
     "image": "/assets/projects/keval.jpg",
     "viewLink": "https://kevalshah.vercel.app/",
+     "screenshots": [
+    "/assets/screenshots/kev-01.png",
+    "/assets/screenshots/kev-02.png"
+  ],
     "skills": [
       "/assets/skills/react.png",
       "/assets/skills/tailwind.png"
@@ -30,6 +38,10 @@
     "description": "Freelance project for my client",
     "image": "/assets/projects/b&v.jpg",
     "viewLink": "https://bvbookclub.vercel.app/",
+     "screenshots": [
+    "/assets/screenshots/bv-01.png",
+    "/assets/screenshots/bv-02.png"
+  ],
     "skills": [
       "/assets/skills/react.png",
       "/assets/skills/nodejs.png",
@@ -43,6 +55,10 @@
     "description": "Portfolio With Database & Admin Panel",
     "image": "/assets/projects/portfolio.png",
     "viewLink": "https://mern-portfolio-lilac.vercel.app/portfolio",
+     "screenshots": [
+    "/assets/screenshots/pf-01.png",
+    "/assets/screenshots/pf-02.png"
+  ],
     "skills": [
       "/assets/skills/react.png",
       "/assets/skills/nodejs.png",
@@ -57,6 +73,10 @@
     "description": "Kissan-Plus is a full-stack application designed to support and empower farmers with tools and resources. It features a Vite-powered React frontend and a Node.js/Express backend.",
     "image": "/assets/projects/kissanplus.jpg",
     "viewLink": "https://github.com/neelhdesai/prj_kissanplus_MCA_04",
+     "screenshots": [
+    "/assets/screenshots/kp-01.png",
+    "/assets/screenshots/kp-02.jpg"
+  ],
     "skills": [
       "/assets/skills/react.png",
       "/assets/skills/nodejs.png",
@@ -71,6 +91,10 @@
     "description": "E-learning portal is a web-based application developed using the MERN (MongoDB, Express.js, React.js, Node.js) stack, designed to provide an efficient and user-friendly learning experience. The platform offers three distinct roles: Visitor, Student, and Admin, each with unique functionalities.",
     "image": "/assets/projects/eduverse.png",
     "viewLink": "https://github.com/neelhdesai/prj_eduverse_MCA_03",
+     "screenshots": [
+    "/assets/screenshots/edu-01.png",
+    "/assets/screenshots/edu-02.png"
+  ],
     "skills": [
       "/assets/skills/react.png",
       "/assets/skills/nodejs.png",
@@ -85,6 +109,10 @@
     "description": "A sleek Flutter app for searching GitHub profiles and viewing detailed user information.",
     "image": "/assets/projects/github.png",
     "viewLink": "https://github.com/neelhdesai/flutter-github-scout",
+     "screenshots": [
+    "/assets/screenshots/git-01.png",
+    "/assets/screenshots/git-02.png"
+  ],
     "skills": ["/assets/skills/flutter.png"]
   },
   {
@@ -93,6 +121,10 @@
     "description": "The SIP & Lumpsum Calculator is a Flutter application designed to help users calculate their potential returns from Systematic Investment Plans (SIP) and lump sum investments.",
     "image": "/assets/projects/sip-calc.png",
     "viewLink": "https://github.com/neelhdesai/flutter-sip-calculator",
+     "screenshots": [
+    "/assets/screenshots/sip-01.png",
+    "/assets/screenshots/sip-02.png"
+  ],
     "skills": ["/assets/skills/flutter.png"]
   },
   {
@@ -101,6 +133,12 @@
     "description": "A simple Todo application built with Flutter that allows users to manage their tasks effectively. Users can create, edit, delete, and mark tasks as completed while tracking due dates and remaining time for tasks.",
     "image": "/assets/projects/to-do-list.png",
     "viewLink": "https://github.com/neelhdesai/flutter-to-do-list",
+     "screenshots": [
+    "/assets/screenshots/todo_01.png",
+    "/assets/screenshots/todo_02.png",
+     "/assets/screenshots/todo_03.png",
+    "/assets/screenshots/todo_04.png"
+  ],
     "skills": ["/assets/skills/flutter.png"]
   },
   {
@@ -109,6 +147,11 @@
     "description": "A full-featured campus placement system with role-based access for students and recruiters, real-time job postings, and resume filtering.",
     "image": "/assets/projects/tic-tac-toe.png",
     "viewLink": "https://github.com/neelhdesai/flutter-tic-tac-toe",
+    "screenshots": [
+    "/assets/screenshots/tic-01.png",
+    "/assets/screenshots/tic-02.png",
+     "/assets/screenshots/tic-03.png"
+  ],
     "skills": ["/assets/skills/flutter.png"]
   },
   {
@@ -117,6 +160,10 @@
     "description": "A simple weather application built for Android that provides current weather data based on user location or city name input. It utilizes the OpenWeatherMap API to fetch weather details, including temperature, humidity, wind speed, sunrise, and sunset times. The app also features dynamic background animations and images based on the weather conditions.",
     "image": "/assets/projects/weather-app.png",
     "viewLink": "https://github.com/neelhdesai/weather_app_android",
+    "screenshots": [
+    "/assets/screenshots/weather-01.jpeg",
+    "/assets/screenshots/weather-02.jpeg"
+  ],
     "skills": ["/assets/skills/android.png"]
   },
   {
@@ -125,6 +172,13 @@
     "description": "The Library Management System is a comprehensive platform that enables students and librarians to manage library-related tasks efficiently. It features functionalities for issuing books, paying fines, and managing book inventories, making library operations more streamlined and user-friendly.",
     "image": "/assets/projects/library-management-system.png",
     "viewLink": "https://github.com/neelhdesai/prj_library_management_BSIT",
+     "screenshots": [
+    "/assets/screenshots/lib-01.png",
+    "/assets/screenshots/lib-02.png",
+    "/assets/screenshots/lib-03.png",
+    "/assets/screenshots/lib-04.png",
+    "/assets/screenshots/lib-05.png"
+  ],
     "skills": [
       "/assets/skills/android.png",
       "/assets/skills/firebase.png"
