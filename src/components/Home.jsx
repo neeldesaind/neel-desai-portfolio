@@ -4,17 +4,31 @@ import SkeletonLoader from "./SkeletonLoader";
 
 const Home = () => {
   const [homeData, setHomeData] = useState(null);
-  const [isGrayscale, setIsGrayscale] = useState(true); // 🆕 Grayscale toggle
+  const [isMobile, setIsMobile] = useState(false);
+  const [isGrayscale, setIsGrayscale] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setHomeData(heroJson);
     }, 1000);
 
-    return () => clearTimeout(timer);
+    // Detect if it's mobile screen
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize(); // check on load
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
-  const toggleGrayscale = () => setIsGrayscale((prev) => !prev); // 🆕 Toggle logic
+  const toggleGrayscale = () => {
+    if (isMobile) setIsGrayscale((prev) => !prev); // Only on mobile
+  };
 
   return (
     <section
@@ -29,10 +43,9 @@ const Home = () => {
               src={homeData.image}
               alt="Profile"
               draggable="false"
-              onClick={toggleGrayscale} // 🆕 On click toggle
-              className={`w-full max-w-[280px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] aspect-square object-cover rounded-2xl shadow-xl border border-gray-300 dark:border-gray-700 transition duration-500 ease-in-out hover:scale-105 hover:shadow-2xl cursor-pointer ${
-                isGrayscale ? "grayscale" : ""
-              }`}
+              onClick={toggleGrayscale}
+              className={`w-full max-w-[280px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] aspect-square object-cover rounded-2xl shadow-xl border border-gray-300 dark:border-gray-700 transition duration-500 ease-in-out cursor-pointer 
+                ${isMobile ? (isGrayscale ? "grayscale" : "") : "grayscale hover:grayscale-0"}`}
             />
           ) : (
             <SkeletonLoader
