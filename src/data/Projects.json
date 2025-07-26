@@ -6,8 +6,8 @@
     "image": "/assets/projects/tsa.jpg",
     "viewLink": "https://thousandshadesart.vercel.app/",
      "screenshots": [
-    "/public/assets/screenshots/tsa-01.png",
-    "/public/assets/screenshots/tsa-02.png"
+    "/assets/screenshots/tsa-01.png",
+    "/assets/screenshots/tsa-02.png"
   ],
     "skills": [
       "/assets/skills/react.png",
