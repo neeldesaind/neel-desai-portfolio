@@ -4,15 +4,17 @@ import SkeletonLoader from "./SkeletonLoader";
 
 const Home = () => {
   const [homeData, setHomeData] = useState(null);
+  const [isGrayscale, setIsGrayscale] = useState(true); // 🆕 Grayscale toggle
 
   useEffect(() => {
-    // Simulate loading delay
     const timer = setTimeout(() => {
       setHomeData(heroJson);
-    }, 1000); // 1s delay
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
+
+  const toggleGrayscale = () => setIsGrayscale((prev) => !prev); // 🆕 Toggle logic
 
   return (
     <section
@@ -20,14 +22,17 @@ const Home = () => {
       className="min-h-screen mt-20 flex items-center justify-center bg-gray-50 dark:bg-black px-6 py-20"
     >
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
-        {/* Right: Image (shown first on mobile) */}
+        {/* Right: Image */}
         <div className="flex justify-center md:justify-end w-full order-1 md:order-2">
           {homeData ? (
             <img
               src={homeData.image}
               alt="Profile"
               draggable="false"
-              className="w-full max-w-[280px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] aspect-square object-cover rounded-2xl shadow-xl border border-gray-300 dark:border-gray-700 transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-2xl"
+              onClick={toggleGrayscale} // 🆕 On click toggle
+              className={`w-full max-w-[280px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] aspect-square object-cover rounded-2xl shadow-xl border border-gray-300 dark:border-gray-700 transition duration-500 ease-in-out hover:scale-105 hover:shadow-2xl cursor-pointer ${
+                isGrayscale ? "grayscale" : ""
+              }`}
             />
           ) : (
             <SkeletonLoader
