@@ -147,7 +147,7 @@ const Projects = () => {
                     </div>
 
                     {/* View Links */}
-                    <div className="pt-4 flex flex-col sm:flex-row gap-2">
+                    <div className="pt-4 flex flex-col sm:flex-row gap-2 justify-center items-center text-center">
                       <a
                         href={project.viewLink}
                         target="_blank"
