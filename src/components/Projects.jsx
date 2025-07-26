@@ -181,7 +181,7 @@ const Projects = () => {
           <div className="text-center mt-10">
             <button
               onClick={handleShowMore}
-              className="px-6 py-2 text-sm font-medium text-white bg-gray-900 dark:bg-white dark:text-black rounded-md hover:opacity-90 transition"
+              className="cursor-pointer px-6 py-2 text-sm font-medium text-white bg-gray-900 dark:bg-white dark:text-black rounded-md hover:opacity-90 transition"
             >
               Show More
             </button>
