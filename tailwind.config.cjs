@@ -5,7 +5,6 @@ module.exports = {
       animation: {
         bounce: 'bounce 1s infinite',
         spin: 'spin 2s linear infinite',
-        shine: 'shine 2s linear infinite', // 👈 Add this
       },
       keyframes: {
         bounce: {
@@ -15,12 +14,7 @@ module.exports = {
         spin: {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' },
-        },
-        // 👇 Add shine keyframes
-        shine: {
-          '0%': { left: '100%' },
-          '100%': { left: '-100%' },
-        },
+        }
       },
       colors: {
         primary: {
