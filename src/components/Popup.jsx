@@ -66,6 +66,7 @@ const Popup = () => {
     <span className="absolute h-full w-1/3 bg-white/30 blur-sm animate-shine" />
   </span>
 </div>
+
       </div>
     </div>
   );
