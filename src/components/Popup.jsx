@@ -1,6 +1,3 @@
-Here i want in button glass kind effect continuously white that continuously move from right to left liek shine effect in button
-
-
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 
