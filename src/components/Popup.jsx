@@ -55,12 +55,17 @@ const Popup = () => {
         <p className="text-sm mb-4">
           Thanks for visiting my portfolio. Hope you enjoy exploring it!
         </p>
-        <button
-          onClick={handleClose}
-          className="w-full px-4 py-2 text-sm rounded-md bg-black text-white dark:bg-white dark:text-black cursor-pointer"
-        >
-          Got it
-        </button>
+        <div className="relative group w-full">
+  <button
+    onClick={handleClose}
+    className="relative z-10 w-full px-4 py-2 text-sm rounded-md bg-black text-white dark:bg-white dark:text-black overflow-hidden"
+  >
+    Got it
+  </button>
+  <span className="absolute top-0 left-0 h-full w-full pointer-events-none overflow-hidden rounded-md">
+    <span className="absolute h-full w-1/3 bg-white/30 blur-sm animate-shine" />
+  </span>
+</div>
       </div>
     </div>
   );
