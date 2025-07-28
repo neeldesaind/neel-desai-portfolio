@@ -5,7 +5,13 @@
     "type": "On-site",
     "location": "Anand, Gujarat",
     "duration": "July 2025 - Present",
-    "logo": "/assets/experience/SeaNeb_logo.jpg"
+    "logo": "/assets/experience/SeaNeb_logo.jpg",
+    "responsibilities": [
+      "Monitored website performance and user behavior using Google Analytics",
+      "Collaborated with development team to improve user experience",
+      "Created SEO reports and optimized site speed",
+      "Worked closely with marketing team for A/B testing and funnel tracking"
+    ]
   },
   {
     "company": "Nirvan Infotech",
@@ -14,13 +20,25 @@
         "title": "Digital Marketing",
         "type": "Part-time",
         "location": "Bakrol, Anand, Gujarat",
-        "duration": "Jan 2025 – Present"
+        "duration": "Jan 2025 – Present",
+        "responsibilities": [
+          "Managed Instagram, Facebook, and LinkedIn campaigns",
+          "Executed keyword research and competitor analysis",
+          "Designed creative content for ad campaigns",
+          "Generated weekly performance reports using Google Sheets"
+        ]
       },
       {
         "title": "Web Development Intern",
         "type": "On-site",
         "location": "Bakrol, Anand, Gujarat",
-        "duration": "Dec 2024 – Apr 2025"
+        "duration": "Dec 2024 – Apr 2025",
+        "responsibilities": [
+          "Developed responsive pages using React and Tailwind CSS",
+          "Integrated REST APIs and worked on real-time form validation",
+          "Collaborated with senior developers on backend fixes",
+          "Participated in daily stand-ups and team reviews"
+        ]
       }
     ],
     "logo": "/assets/experience/nirvan_infotech.png"
@@ -31,6 +49,11 @@
     "type": "Remote",
     "location": "Remote",
     "duration": "Dec 2023 – Jan 2024",
-    "logo": "/assets/experience/internshala_logo.jpg"
+    "logo": "/assets/experience/internshala_logo.jpg",
+    "responsibilities": [
+      "Promoted Internshala internships in college via digital platforms",
+      "Guided students on resume building and internship applications",
+      "Organized webinars and encouraged peer engagement"
+    ]
   }
 ]
