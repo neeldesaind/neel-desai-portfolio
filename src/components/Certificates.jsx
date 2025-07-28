@@ -5,6 +5,7 @@ import SkeletonLoader from './SkeletonLoader';
 const Certificates = () => {
   const [certs, setCerts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false); // added
   const [visibleCount, setVisibleCount] = useState(3);
 
   useEffect(() => {
@@ -15,8 +16,18 @@ const Certificates = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleShowMore = () => setVisibleCount(prev => prev + 3);
-  const displayed = loading ? Array.from({ length: 3 }) : certs.slice(0, visibleCount);
+  const handleShowMore = () => {
+    setLoadingMore(true);
+    setTimeout(() => {
+      setVisibleCount((prev) => prev + 3);
+      setLoadingMore(false);
+    }, 1000); // simulate API or delay
+  };
+
+  const displayed = loading
+    ? Array.from({ length: 3 })
+    : certs.slice(0, visibleCount);
+
   const hasMore = visibleCount < certs.length;
 
   return (
@@ -40,7 +51,7 @@ const Certificates = () => {
               key={i}
               className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
             >
-              {loading ? (
+              {loading || (loadingMore && i >= visibleCount - 3) ? (
                 <SkeletonLoader width="w-full" height="h-48" />
               ) : (
                 <a href={cert.link} target="_blank" rel="noopener noreferrer">
@@ -53,7 +64,7 @@ const Certificates = () => {
               )}
 
               <div className="p-4 space-y-2">
-                {loading ? (
+                {loading || (loadingMore && i >= visibleCount - 3) ? (
                   <>
                     <SkeletonLoader width="w-3/4" height="h-5" />
                     <SkeletonLoader width="w-1/2" height="h-4" />
@@ -83,9 +94,12 @@ const Certificates = () => {
           <div className="text-center mt-10">
             <button
               onClick={handleShowMore}
-              className="px-6 py-2 text-sm font-medium text-white bg-gray-900 dark:bg-white dark:text-black rounded-md hover:opacity-90 transition"
+              disabled={loadingMore}
+              className={`px-6 py-2 text-sm font-medium text-white bg-gray-900 dark:bg-white dark:text-black rounded-md transition ${
+                loadingMore ? 'opacity-50 cursor-wait' : 'hover:opacity-90'
+              }`}
             >
-              Show More
+              {loadingMore ? 'Loading...' : 'Show More'}
             </button>
           </div>
         )}
