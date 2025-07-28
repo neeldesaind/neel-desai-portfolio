@@ -30,15 +30,25 @@ const Experience = () => {
     setSelectedResponsibilities([]);
   };
 
-  useEffect(() => {
+useEffect(() => {
   if (showModal) {
-    document.body.classList.add('no-scroll');
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
   } else {
-    document.body.classList.remove('no-scroll');
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
   }
 
-  return () => document.body.classList.remove('no-scroll');
+  // Cleanup when component unmounts
+  return () => {
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
+  };
 }, [showModal]);
+
 
   const lineColor = isDark ? '#374151' : '#d1d5db';
   const bgColor = isDark ? '#111827' : '#ffffff';
