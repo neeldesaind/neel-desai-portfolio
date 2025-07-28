@@ -30,23 +30,14 @@ const Experience = () => {
     setSelectedResponsibilities([]);
   };
 
-useEffect(() => {
+  useEffect(() => {
   if (showModal) {
-    document.body.style.overflow = 'hidden';
-    document.body.style.position = 'fixed';
-    document.body.style.width = '100%';
+    document.body.classList.add('no-scroll');
   } else {
-    document.body.style.overflow = '';
-    document.body.style.position = '';
-    document.body.style.width = '';
+    document.body.classList.remove('no-scroll');
   }
 
-  // Cleanup when component unmounts
-  return () => {
-    document.body.style.overflow = '';
-    document.body.style.position = '';
-    document.body.style.width = '';
-  };
+  return () => document.body.classList.remove('no-scroll');
 }, [showModal]);
 
 
