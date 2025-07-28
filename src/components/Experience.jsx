@@ -30,6 +30,16 @@ const Experience = () => {
     setSelectedResponsibilities([]);
   };
 
+  useEffect(() => {
+  if (showModal) {
+    document.body.classList.add('no-scroll');
+  } else {
+    document.body.classList.remove('no-scroll');
+  }
+
+  return () => document.body.classList.remove('no-scroll');
+}, [showModal]);
+
   const lineColor = isDark ? '#374151' : '#d1d5db';
   const bgColor = isDark ? '#111827' : '#ffffff';
   const textColor = isDark ? '#f9fafb' : '#1f2937';
@@ -180,11 +190,12 @@ const Experience = () => {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4">
           <div className="max-w-md w-full bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 relative">
             <button
-              onClick={handleCloseModal}
-              className="absolute top-3 right-3 text-gray-500 dark:text-gray-400 hover:text-red-500 text-xl"
-            >
-              &times;
-            </button>
+  onClick={handleCloseModal}
+  className="absolute top-3 right-3 text-gray-500 dark:text-gray-400 hover:text-red-500 text-3xl"
+>
+  &times;
+</button>
+
             <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
               Key Responsibilities
             </h3>
