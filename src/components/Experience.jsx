@@ -3,12 +3,14 @@ import experienceJson from '../data/Experience.json';
 import SkeletonLoader from './SkeletonLoader';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { useTheme } from '../Hooks/useTheme'; // ✅ import
+import { useTheme } from '../Hooks/useTheme';
 
 const Experience = () => {
   const [experiences, setExperiences] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { isDark } = useTheme(); // ✅ use hook
+  const [selectedResponsibilities, setSelectedResponsibilities] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const { isDark } = useTheme();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -17,6 +19,16 @@ const Experience = () => {
     }, 800);
     return () => clearTimeout(timer);
   }, []);
+
+  const handleShowResponsibilities = (responsibilities) => {
+    setSelectedResponsibilities(responsibilities || []);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedResponsibilities([]);
+  };
 
   const lineColor = isDark ? '#374151' : '#d1d5db';
   const bgColor = isDark ? '#111827' : '#ffffff';
@@ -29,7 +41,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="bg-gray-50 dark:bg-black py-20 px-4 sm:px-6 md:px-10 transition-colors duration-300"
+      className="bg-gray-50 dark:bg-black py-20 px-4 sm:px-6 md:px-10 transition-colors duration-300 relative"
     >
       <div className="max-w-6xl mx-auto">
         {loading ? (
@@ -53,7 +65,6 @@ const Experience = () => {
         ) : (
           <VerticalTimeline lineColor={lineColor}>
             {experiences.map((exp, i) => {
-              // Multiple roles in same company
               if (exp.roles && Array.isArray(exp.roles)) {
                 return exp.roles.map((role, idx) => (
                   <VerticalTimelineElement
@@ -92,10 +103,18 @@ const Experience = () => {
                     <p className="italic text-sm text-gray-500 dark:text-gray-400">
                       {role.location}
                     </p>
+
+                    {role.responsibilities && (
+                      <button
+                        className="mt-3 text-sm text-indigo-600 hover:underline dark:text-indigo-400"
+                        onClick={() => handleShowResponsibilities(role.responsibilities)}
+                      >
+                        View Responsibilities
+                      </button>
+                    )}
                   </VerticalTimelineElement>
                 ));
               } else {
-                // Single role
                 return (
                   <VerticalTimelineElement
                     key={i}
@@ -133,6 +152,15 @@ const Experience = () => {
                     <p className="italic text-sm text-gray-500 dark:text-gray-400">
                       {exp.location}
                     </p>
+
+                    {exp.responsibilities && (
+                      <button
+                        className="mt-3 text-sm text-indigo-600 hover:underline dark:text-indigo-400"
+                        onClick={() => handleShowResponsibilities(exp.responsibilities)}
+                      >
+                        View Responsibilities
+                      </button>
+                    )}
                   </VerticalTimelineElement>
                 );
               }
@@ -140,6 +168,28 @@ const Experience = () => {
           </VerticalTimeline>
         )}
       </div>
+
+      {/* Modal for Responsibilities */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4">
+          <div className="max-w-md w-full bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 relative">
+            <button
+              onClick={handleCloseModal}
+              className="absolute top-3 right-3 text-gray-500 dark:text-gray-400 hover:text-red-500 text-xl"
+            >
+              &times;
+            </button>
+            <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+              Key Responsibilities
+            </h3>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 text-sm max-h-64 overflow-y-auto">
+              {selectedResponsibilities.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
