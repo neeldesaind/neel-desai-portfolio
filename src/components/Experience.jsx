@@ -52,45 +52,91 @@ const Experience = () => {
           </div>
         ) : (
           <VerticalTimeline lineColor={lineColor}>
-            {experiences.map((exp, i) => (
-              <VerticalTimelineElement
-                key={i}
-                date={exp.duration}
-                contentStyle={{
-                  background: bgColor,
-                  color: textColor,
-                  border: `1px solid ${borderColor}`,
-                  borderRadius: '0.75rem',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
-                }}
-                contentArrowStyle={{ borderRight: `7px solid ${arrowColor}` }}
-                iconStyle={{
-                  background: iconBg,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: '8px',
-                  border: `2px solid ${iconBorder}`,
-                }}
-                icon={
-                  <img
-                    src={exp.logo}
-                    alt={exp.company}
-                    className="w-8 h-8 object-contain"
-                  />
-                }
-              >
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  {exp.company}
-                </h3>
-                <h4 className="text-sm text-gray-600 dark:text-gray-300">
-                  {exp.role} · {exp.type}
-                </h4>
-                <p className="italic text-sm text-gray-500 dark:text-gray-400">
-                  {exp.location}
-                </p>
-              </VerticalTimelineElement>
-            ))}
+            {experiences.map((exp, i) => {
+              // Multiple roles in same company
+              if (exp.roles && Array.isArray(exp.roles)) {
+                return exp.roles.map((role, idx) => (
+                  <VerticalTimelineElement
+                    key={`${i}-${idx}`}
+                    date={role.duration}
+                    contentStyle={{
+                      background: bgColor,
+                      color: textColor,
+                      border: `1px solid ${borderColor}`,
+                      borderRadius: '0.75rem',
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+                    }}
+                    contentArrowStyle={{ borderRight: `7px solid ${arrowColor}` }}
+                    iconStyle={{
+                      background: iconBg,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      padding: '8px',
+                      border: `2px solid ${iconBorder}`,
+                    }}
+                    icon={
+                      <img
+                        src={exp.logo}
+                        alt={exp.company}
+                        className="w-8 h-8 object-contain"
+                      />
+                    }
+                  >
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      {exp.company}
+                    </h3>
+                    <h4 className="text-sm text-gray-600 dark:text-gray-300">
+                      {role.title} · {role.type}
+                    </h4>
+                    <p className="italic text-sm text-gray-500 dark:text-gray-400">
+                      {role.location}
+                    </p>
+                  </VerticalTimelineElement>
+                ));
+              } else {
+                // Single role
+                return (
+                  <VerticalTimelineElement
+                    key={i}
+                    date={exp.duration}
+                    contentStyle={{
+                      background: bgColor,
+                      color: textColor,
+                      border: `1px solid ${borderColor}`,
+                      borderRadius: '0.75rem',
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+                    }}
+                    contentArrowStyle={{ borderRight: `7px solid ${arrowColor}` }}
+                    iconStyle={{
+                      background: iconBg,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      padding: '8px',
+                      border: `2px solid ${iconBorder}`,
+                    }}
+                    icon={
+                      <img
+                        src={exp.logo}
+                        alt={exp.company}
+                        className="w-8 h-8 object-contain"
+                      />
+                    }
+                  >
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      {exp.company}
+                    </h3>
+                    <h4 className="text-sm text-gray-600 dark:text-gray-300">
+                      {exp.role} · {exp.type}
+                    </h4>
+                    <p className="italic text-sm text-gray-500 dark:text-gray-400">
+                      {exp.location}
+                    </p>
+                  </VerticalTimelineElement>
+                );
+              }
+            })}
           </VerticalTimeline>
         )}
       </div>
