@@ -16,3 +16,9 @@ html {
 }
 
 @config "../tailwind.config.cjs";
+
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
