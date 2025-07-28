@@ -5,13 +5,7 @@
     "type": "On-site",
     "location": "Anand, Gujarat",
     "duration": "July 2025 - Present",
-    "logo": "/assets/experience/SeaNeb_logo.jpg",
-    "responsibilities": [
-      "Monitored website performance and user behavior using Google Analytics",
-      "Collaborated with development team to improve user experience",
-      "Created SEO reports and optimized site speed",
-      "Worked closely with marketing team for A/B testing and funnel tracking"
-    ]
+    "logo": "/assets/experience/SeaNeb_logo.jpg"
   },
   {
     "company": "Nirvan Infotech",
@@ -22,10 +16,10 @@
         "location": "Bakrol, Anand, Gujarat",
         "duration": "Jan 2025 – Present",
         "responsibilities": [
-          "Managed Instagram, Facebook, and LinkedIn campaigns",
-          "Executed keyword research and competitor analysis",
-          "Designed creative content for ad campaigns",
-          "Generated weekly performance reports using Google Sheets"
+          "Managed Meta Ads (Facebook & Instagram) campaigns exclusively for a client, focusing on lead generation and brand awareness",
+          "Created and executed targeted ad campaigns, optimizing for audience segments, interests, and demographics",
+          "Delivered high-quality leads that contributed directly to the client’s business growth and ROI",
+          "Built a strong understanding of Meta Ads Manager, audience insights, and ad performance strategies"
         ]
       },
       {
@@ -34,10 +28,11 @@
         "location": "Bakrol, Anand, Gujarat",
         "duration": "Dec 2024 – Apr 2025",
         "responsibilities": [
-          "Developed responsive pages using React and Tailwind CSS",
-          "Integrated REST APIs and worked on real-time form validation",
-          "Collaborated with senior developers on backend fixes",
-          "Participated in daily stand-ups and team reviews"
+          "Developed full-stack web applications using MongoDB, Express.js, React.js, and Node.js (MERN stack)",
+          "Designed and integrated RESTful APIs with modern front-end frameworks for seamless user experiences",
+          "Implemented robust authentication, authorization, and security protocols following industry best practices",
+          "Collaborated effectively within cross-functional teams utilizing Git version control for code management",
+          "Applied responsive design principles and executed performance optimization techniques to enhance application speed and usability across devices"
         ]
       }
     ],
@@ -51,9 +46,13 @@
     "duration": "Dec 2023 – Jan 2024",
     "logo": "/assets/experience/internshala_logo.jpg",
     "responsibilities": [
-      "Promoted Internshala internships in college via digital platforms",
-      "Guided students on resume building and internship applications",
-      "Organized webinars and encouraged peer engagement"
+      "Marketed Internshala’s platform, promoting internships and online training programs to increase student engagement",
+      "Promoted Internshala Trainings, guiding peers to upskill through online courses and improve career prospects",
+      "Organized and conducted seminars/workshops on campus to educate students about internships and career development opportunities",
+      "Leveraged social media and online platforms to increase awareness about Internshala’s opportunities",
+      "Built relationships with students and faculty to foster a culture of internships within the college",
+      "Encouraged students to actively seek and pursue internship opportunities, contributing to an internship-driven campus environment",
+      "Received official recognition and merchandise (T-shirt) from Internshala for active participation and performance"
     ]
   }
 ]
