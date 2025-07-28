@@ -106,11 +106,14 @@ const Experience = () => {
 
                     {role.responsibilities && (
                       <button
-                        className="mt-3 text-sm text-indigo-600 hover:underline dark:text-indigo-400"
-                        onClick={() => handleShowResponsibilities(role.responsibilities)}
-                      >
-                        View Responsibilities
-                      </button>
+  onClick={() => handleShowResponsibilities(role.responsibilities)}
+  className="mt-4 px-4 py-1.5 rounded-full text-sm font-medium transition-colors 
+             bg-black text-white hover:bg-gray-800 
+             dark:bg-white dark:text-black dark:hover:bg-gray-200"
+>
+  View Responsibilities
+</button>
+
                     )}
                   </VerticalTimelineElement>
                 ));
@@ -155,11 +158,14 @@ const Experience = () => {
 
                     {exp.responsibilities && (
                       <button
-                        className="mt-3 text-sm text-indigo-600 hover:underline dark:text-indigo-400"
-                        onClick={() => handleShowResponsibilities(exp.responsibilities)}
-                      >
-                        View Responsibilities
-                      </button>
+  onClick={() => handleShowResponsibilities(exp.responsibilities)}
+  className="mt-4 px-4 py-1.5 rounded-full text-sm font-medium transition-colors 
+             bg-black text-white hover:bg-gray-800 
+             dark:bg-white dark:text-black dark:hover:bg-gray-200"
+>
+  View Responsibilities
+</button>
+
                     )}
                   </VerticalTimelineElement>
                 );
