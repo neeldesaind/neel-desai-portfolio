@@ -7,20 +7,22 @@
     "duration": "July 2025 - Present",
     "logo": "/assets/experience/SeaNeb_logo.jpg"
   },
-   {
-    "company": "Nirvan Infotech",
-    "role": "Digital Marketing",
-    "type": "Part-time",
-    "location": "Bakrol, Anand, Gujarat",
-    "duration": "Jan 2025 – Present",
-    "logo": "/assets/experience/nirvan_infotech.png"
-  },
   {
     "company": "Nirvan Infotech",
-    "role": "Web Development Intern",
-    "type": "On-site",
-    "location": "Bakrol, Anand, Gujarat",
-    "duration": "Dec 2024 – Apr 2025",
+    "roles": [
+      {
+        "title": "Digital Marketing",
+        "type": "Part-time",
+        "location": "Bakrol, Anand, Gujarat",
+        "duration": "Jan 2025 – Present"
+      },
+      {
+        "title": "Web Development Intern",
+        "type": "On-site",
+        "location": "Bakrol, Anand, Gujarat",
+        "duration": "Dec 2024 – Apr 2025"
+      }
+    ],
     "logo": "/assets/experience/nirvan_infotech.png"
   },
   {
