@@ -1,0 +1,69 @@
+{
+  "images": [
+    {
+      "src": "/assets/gallery/uni-event-01.jpg",
+      "alt": "Uniexplore",
+      "category": "event"
+    },
+    {
+      "src": "/assets/gallery/uni-event-02.jpg",
+      "alt": "Uniexplore",
+      "category": "event"
+    },
+    {
+      "src": "/assets/gallery/uni-event-03.jpg",
+      "alt": "Uniexplore",
+      "category": "event"
+    },
+    {
+      "src": "/assets/gallery/uni-event-04.jpg",
+      "alt": "Uniexplore",
+      "category": "event"
+    },
+    {
+      "src": "/assets/gallery/uni-event-05.jpg",
+      "alt": "Uniexplore",
+      "category": "event"
+    },
+    {
+      "src": "/assets/gallery/uni-event-06.jpg",
+      "alt": "Uniexplore",
+      "category": "event"
+    },
+     {
+      "src": "/assets/gallery/trip/01.jpg",
+      "alt": "Trip",
+      "category": "trip"
+    },
+    {
+      "src": "/assets/gallery/trip/02.jpg",
+      "alt": "Trip",
+      "category": "trip"
+    },
+     {
+      "src": "/assets/gallery/trip/03.jpg",
+      "alt": "Trip",
+      "category": "trip"
+    },
+    {
+      "src": "/assets/gallery/trip/04.jpg",
+      "alt": "Trip",
+      "category": "trip"
+    },
+     {
+      "src": "/assets/gallery/trip/05.jpg",
+      "alt": "Trip",
+      "category": "trip"
+    },
+     {
+      "src": "/assets/gallery/party/01.jpg",
+      "alt": "Party",
+      "category": "other"
+    },
+    {
+      "src": "/assets/gallery/party/02.jpg",
+      "alt": "Party",
+      "category": "other"
+    }
+  ]
+}
