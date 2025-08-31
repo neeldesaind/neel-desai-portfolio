@@ -15,7 +15,7 @@ import Footer from "./components/Footer.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import NotFound from "./components/NotFound.jsx";
 import Popup from "./components/Popup.jsx"
-import Preloader from "./components/Preloader.jsx"; // ⬅️ Add this
+import Preloader from "./components/Preloader.jsx";
 import Gallery from "./components/Gallery.jsx";
 
 function App() {
