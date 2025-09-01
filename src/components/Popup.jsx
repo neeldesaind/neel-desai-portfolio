@@ -5,8 +5,16 @@ const Popup = () => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(true), 1500);
-    return () => clearTimeout(timer);
+    const hasSeenPopup = sessionStorage.getItem("popupShown");
+
+    if (!hasSeenPopup) {
+      const timer = setTimeout(() => {
+        setShow(true);
+        sessionStorage.setItem("popupShown", "true");
+      }, 1500);
+
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   useEffect(() => {
@@ -19,10 +27,10 @@ const Popup = () => {
         }
         if (e.key === "Enter") {
           e.preventDefault();
-          setShow(false);
-          document.body.style.overflow = "auto";
+          handleClose();
         }
       };
+
       window.addEventListener("keydown", handleKeyDown);
 
       return () => {
@@ -32,12 +40,12 @@ const Popup = () => {
     }
   }, [show]);
 
-  if (!show) return null;
-
   const handleClose = () => {
     setShow(false);
     document.body.style.overflow = "auto";
   };
+
+  if (!show) return null;
 
   return (
     <div
