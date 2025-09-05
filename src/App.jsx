@@ -14,15 +14,18 @@ import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import NotFound from "./components/NotFound.jsx";
-import Popup from "./components/Popup.jsx"
+import Popup from "./components/Popup.jsx";
 import Preloader from "./components/Preloader.jsx";
 import Gallery from "./components/Gallery.jsx";
+
+// ✅ Import Google Analytics Tracker
+import AnalyticsTracker from "./components/AnalyticsTracker.jsx";
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1200); // Adjust timing if needed
+    const timer = setTimeout(() => setLoading(false), 1200);
     return () => clearTimeout(timer);
   }, []);
 
@@ -30,7 +33,10 @@ function App() {
 
   return (
     <BrowserRouter>
-    <Popup/>
+      {/* ✅ Track route changes for GA */}
+      <AnalyticsTracker />
+
+      <Popup />
       <Header />
       <Routes>
         <Route
@@ -50,7 +56,7 @@ function App() {
             </>
           }
         />
-          <Route path="/gallery" element={<Gallery />} />
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
