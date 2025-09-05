@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async"; // ✅ SEO
 import projectsJson from "../data/Projects.json";
 import SkeletonLoader from "./SkeletonLoader";
 import ReactModal from "react-modal";
@@ -6,7 +7,6 @@ import ReactModal from "react-modal";
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [loadingMore, setLoadingMore] = useState(false); // new state
   const [visibleCount, setVisibleCount] = useState(3);
   const [expandedProjects, setExpandedProjects] = useState({});
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,21 +22,18 @@ const Projects = () => {
 
   useEffect(() => {
     if (isModalOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = "hidden"; // disable scroll
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "auto"; // re-enable scroll
     }
+
     return () => {
       document.body.style.overflow = "auto";
     };
   }, [isModalOpen]);
 
   const handleShowMore = () => {
-    setLoadingMore(true);
-    setTimeout(() => {
-      setVisibleCount((prev) => prev + 3);
-      setLoadingMore(false);
-    }, 1000); // simulate delay
+    setVisibleCount((prev) => prev + 3);
   };
 
   const toggleReadMore = (index) => {
@@ -62,8 +59,36 @@ const Projects = () => {
   const hasMoreToShow = visibleCount < projects.length;
 
   return (
-    <section id="projects" className="bg-white dark:bg-black py-20 px-4 sm:px-6 md:px-10">
+    <section
+      id="projects"
+      className="bg-white dark:bg-black py-20 px-4 sm:px-6 md:px-10"
+    >
+      {/* ✅ SEO Meta Tags */}
+      <Helmet>
+        <title>Projects | My Portfolio</title>
+        <meta
+          name="description"
+          content="Explore my portfolio projects showcasing web development, design, and technical expertise across various technologies."
+        />
+        <meta
+          name="keywords"
+          content="projects, portfolio, web development, coding, software engineering"
+        />
+        <meta property="og:title" content="Projects | My Portfolio" />
+        <meta
+          property="og:description"
+          content="Browse through my featured projects, highlighting creativity, problem-solving, and technical skills."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourdomain.com/projects" />
+        <meta
+          property="og:image"
+          content={projects[0]?.image || "/default-project.jpg"}
+        />
+      </Helmet>
+
       <div className="max-w-6xl mx-auto">
+        {/* Heading */}
         {loading ? (
           <div className="mb-12 flex justify-center">
             <SkeletonLoader width="w-56" height="h-10" />
@@ -81,7 +106,7 @@ const Projects = () => {
               key={i}
               className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
             >
-              {loading || (loadingMore && i >= visibleCount - 3) ? (
+              {loading ? (
                 <SkeletonLoader width="w-full" height="h-48" />
               ) : (
                 <img
@@ -92,7 +117,7 @@ const Projects = () => {
               )}
 
               <div className="p-5 space-y-3">
-                {loading || (loadingMore && i >= visibleCount - 3) ? (
+                {loading ? (
                   <>
                     <SkeletonLoader width="w-24" height="h-4" />
                     <SkeletonLoader width="w-3/4" height="h-6" />
@@ -101,14 +126,17 @@ const Projects = () => {
                   </>
                 ) : (
                   <>
+                    {/* Type Badge */}
                     <span className="inline-block px-3 py-1 text-xs font-medium bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-300 rounded-full">
                       {project.type}
                     </span>
 
+                    {/* Title */}
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                       {project.title}
                     </h3>
 
+                    {/* Description */}
                     <div className="text-sm text-gray-600 dark:text-gray-400">
                       {expandedProjects[i]
                         ? project.description
@@ -124,6 +152,7 @@ const Projects = () => {
                       )}
                     </div>
 
+                    {/* Skills */}
                     <div className="flex flex-wrap gap-2 pt-2">
                       {project.skills.map((icon, idx) => (
                         <div
@@ -140,6 +169,7 @@ const Projects = () => {
                       ))}
                     </div>
 
+                    {/* View Links */}
                     <div className="pt-4 flex flex-col sm:flex-row gap-2 justify-center items-center text-center">
                       <a
                         href={project.viewLink}
@@ -150,14 +180,17 @@ const Projects = () => {
                         View Project
                       </a>
 
-                      {project.screenshots?.length > 0 && (
-                        <button
-                          onClick={() => openScreenshotModal(project.screenshots)}
-                          className="cursor-pointer inline-block px-4 py-2 text-sm font-medium text-white bg-black dark:bg-white dark:text-black rounded-md hover:opacity-90 transition"
-                        >
-                          View Screenshots
-                        </button>
-                      )}
+                      {project.screenshots &&
+                        project.screenshots.length > 0 && (
+                          <button
+                            onClick={() =>
+                              openScreenshotModal(project.screenshots)
+                            }
+                            className="inline-block px-4 py-2 text-sm font-medium text-white bg-black dark:bg-white dark:text-black rounded-md hover:opacity-90 transition"
+                          >
+                            View Screenshots
+                          </button>
+                        )}
                     </div>
                   </>
                 )}
@@ -171,12 +204,9 @@ const Projects = () => {
           <div className="text-center mt-10">
             <button
               onClick={handleShowMore}
-              disabled={loadingMore}
-              className={`cursor-pointer px-6 py-2 text-sm font-medium text-white bg-gray-900 dark:bg-white dark:text-black rounded-md transition ${
-                loadingMore ? "opacity-50 cursor-wait" : "hover:opacity-90"
-              }`}
+              className="px-6 py-2 text-sm font-medium text-white bg-gray-900 dark:bg-white dark:text-black rounded-md hover:opacity-90 transition"
             >
-              {loadingMore ? "Loading..." : "Show More"}
+              Show More
             </button>
           </div>
         )}
@@ -190,6 +220,7 @@ const Projects = () => {
           ariaHideApp={false}
         >
           <div className="relative bg-white dark:bg-gray-900 rounded-xl w-full max-w-5xl max-h-[90vh] overflow-y-auto shadow-xl px-4 sm:px-6 py-6 mt-20 sm:mt-24">
+            {/* Modal Header */}
             <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4 mb-6">
               <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
                 Project Screenshots
@@ -206,11 +237,17 @@ const Projects = () => {
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
             </div>
 
+            {/* Screenshot Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-6">
               {modalImages.map((img, index) => (
                 <div
