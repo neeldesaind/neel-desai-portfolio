@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async"; // ✅ SEO
-import testimonialsJson from "../data/Testimonials.json";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import SkeletonLoader from "./SkeletonLoader";
-import "swiper/css";
-import "swiper/css/navigation";
+import { useEffect, useState } from 'react';
+import testimonialsJson from '../data/Testimonials.json';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import SkeletonLoader from './SkeletonLoader';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const MAX_LENGTH = 120;
 
@@ -29,34 +28,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section
-      id="testimonials"
-      className="bg-white dark:bg-black py-20 px-4 sm:px-6 md:px-10"
-    >
-      {/* ✅ SEO Meta Tags */}
-      <Helmet>
-        <title>Testimonials | What People Say</title>
-        <meta
-          name="description"
-          content="Read testimonials and feedback from clients, colleagues, and partners about my work and professional experience."
-        />
-        <meta
-          name="keywords"
-          content="testimonials, feedback, client reviews, recommendations"
-        />
-        <meta property="og:title" content="Testimonials | What People Say" />
-        <meta
-          property="og:description"
-          content="Honest reviews and feedback from clients and colleagues about my work."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/testimonials" />
-        <meta
-          property="og:image"
-          content={testimonials[0]?.photo || "/default-image.jpg"}
-        />
-      </Helmet>
-
+    <section id="testimonials" className="bg-white dark:bg-black py-20 px-4 sm:px-6 md:px-10">
       <div className="max-w-5xl mx-auto text-center">
         {/* Heading with Skeleton */}
         {loading ? (
@@ -76,22 +48,9 @@ const Testimonials = () => {
                 key={i}
                 className="relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-8 py-10 shadow-lg max-w-xl mx-auto"
               >
-                <SkeletonLoader
-                  width="w-12"
-                  height="h-12"
-                  rounded="rounded-full"
-                  className="mx-auto mb-4"
-                />
-                <SkeletonLoader
-                  width="w-3/4"
-                  height="h-5"
-                  className="mx-auto mb-2"
-                />
-                <SkeletonLoader
-                  width="w-1/2"
-                  height="h-4"
-                  className="mx-auto mb-4"
-                />
+                <SkeletonLoader width="w-12" height="h-12" rounded="rounded-full" className="mx-auto mb-4" />
+                <SkeletonLoader width="w-3/4" height="h-5" className="mx-auto mb-2" />
+                <SkeletonLoader width="w-1/2" height="h-4" className="mx-auto mb-4" />
                 <SkeletonLoader width="w-full" height="h-4" className="mb-2" />
                 <SkeletonLoader width="w-full" height="h-4" className="mb-2" />
                 <SkeletonLoader width="w-2/3" height="h-4" className="mb-2" />
@@ -108,26 +67,22 @@ const Testimonials = () => {
             navigation
             breakpoints={{
               768: { slidesPerView: 1.5 },
-              1024: { slidesPerView: 1.8 },
+              1024: { slidesPerView: 1.8 }
             }}
           >
             {testimonials.map((item, i) => {
               const isExpanded = expandedIndexes.includes(i);
               const showToggle = item.text.length > MAX_LENGTH;
-              const displayText = isExpanded
-                ? item.text
-                : item.text.slice(0, MAX_LENGTH);
+              const displayText = isExpanded ? item.text : item.text.slice(0, MAX_LENGTH);
 
               return (
                 <SwiperSlide key={i}>
                   <div className="relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-8 py-10 shadow-lg max-w-xl mx-auto transition-all duration-50">
-                    <span className="text-pink-500 text-5xl absolute -top-6 left-4 select-none">
-                      “
-                    </span>
+                    <span className="text-pink-500 text-5xl absolute -top-6 left-4 select-none">“</span>
 
                     <p className="text-lg text-gray-700 dark:text-gray-300 italic mb-4 leading-relaxed z-10 relative">
                       {displayText}
-                      {!isExpanded && showToggle ? "..." : ""}
+                      {!isExpanded && showToggle ? '...' : ''}
                     </p>
 
                     {showToggle && (
@@ -135,7 +90,7 @@ const Testimonials = () => {
                         onClick={() => toggleExpand(i)}
                         className="text-sm text-black dark:text-white underline focus:outline-none"
                       >
-                        {isExpanded ? "View Less" : "View More"}
+                        {isExpanded ? 'View Less' : 'View More'}
                       </button>
                     )}
 
@@ -146,9 +101,7 @@ const Testimonials = () => {
                         className="w-12 h-12 rounded-full object-cover border border-gray-300 dark:border-gray-600"
                       />
                       <div className="text-left">
-                        <h4 className="text-gray-900 dark:text-white font-semibold">
-                          {item.name}
-                        </h4>
+                        <h4 className="text-gray-900 dark:text-white font-semibold">{item.name}</h4>
                         <p className="text-sm text-gray-500 dark:text-gray-400">
                           {item.role} · {item.date}
                         </p>
