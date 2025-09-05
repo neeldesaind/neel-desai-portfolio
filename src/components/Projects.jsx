@@ -65,7 +65,6 @@ const Projects = () => {
     >
       {/* ✅ SEO Meta Tags */}
       <Helmet>
-        <title>Projects | My Portfolio</title>
         <meta
           name="description"
           content="Explore my portfolio projects showcasing web development, design, and technical expertise across various technologies."
@@ -270,3 +269,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
