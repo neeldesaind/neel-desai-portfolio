@@ -37,7 +37,6 @@
       >
         {/* ✅ SEO Meta Tags */}
         <Helmet>
-          <title>Professional Experience</title>
           <meta
             name="description"
             content="Explore my professional experience, including roles, companies, and key contributions in my career journey."
@@ -127,3 +126,4 @@
   };
 
   export default Experience;
+
