@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header.jsx";
@@ -32,6 +33,7 @@ function App() {
   if (loading) return <Preloader />;
 
   return (
+     <HelmetProvider>
     <BrowserRouter>
       {/* ✅ Track route changes for GA */}
       <AnalyticsTracker />
@@ -61,6 +63,7 @@ function App() {
       </Routes>
       <Footer />
     </BrowserRouter>
+    </HelmetProvider>
   );
 }
 
