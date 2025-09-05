@@ -19,7 +19,14 @@ const Gallery = () => {
   const openImage = (index) => setSelectedIndex(index);
   const closeImage = () => setSelectedIndex(null);
 
-  // Filtered images (memoized so callbacks don't break)
+  // Compute dynamic categories from JSON
+  const categories = useMemo(() => {
+    if (!gallery) return [];
+    const cats = new Set(gallery.images.map((img) => img.category));
+    return ["all", ...cats];
+  }, [gallery]);
+
+  // Filter images based on selected category
   const filteredImages = useMemo(() => {
     if (!gallery) return [];
     return selectedCategory === "all"
@@ -27,7 +34,7 @@ const Gallery = () => {
       : gallery.images.filter((img) => img.category === selectedCategory);
   }, [gallery, selectedCategory]);
 
-  // Prev & Next with useCallback
+  // Prev & Next image
   const prevImage = useCallback(() => {
     setSelectedIndex((prev) =>
       prev === 0 ? filteredImages.length - 1 : prev - 1
@@ -40,7 +47,7 @@ const Gallery = () => {
     );
   }, [filteredImages]);
 
-  // Keyboard navigation
+  // Keyboard navigation for lightbox
   useEffect(() => {
     if (selectedIndex === null) return;
 
@@ -87,12 +94,12 @@ const Gallery = () => {
 
         {/* Category Filters */}
         <div className="flex justify-center gap-4 mb-12 flex-wrap">
-          {["all", "event", "trip", "other"].map((cat) => (
+          {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => {
                 setSelectedCategory(cat);
-                setVisibleCount(6); // reset count
+                setVisibleCount(6);
               }}
               className={`px-4 py-2 rounded-full text-sm font-medium ${
                 selectedCategory === cat
