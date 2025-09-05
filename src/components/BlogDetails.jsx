@@ -82,13 +82,15 @@ const BlogDetails = () => {
         {loading ? (
           <SkeletonLoader width="w-full" height="h-72" className="mt-32" />
         ) : (
-          <div className="relative overflow-hidden rounded-lg mt-32 group">
-            <img
-              src={blog.image || "/assets/default-blog.jpg"}
-              alt={`${blog.title} - My Portfolio Blog`}
-              className="w-full h-72 object-cover transition-transform duration-500 transform group-hover:scale-105"
-              loading="lazy"
-            />
+          <div className="relative overflow-hidden rounded-lg  group">
+            <div className="relative overflow-hidden rounded-lg  group aspect-w-16 aspect-h-9">
+              <img
+                src={blog.image || "/assets/default-blog.jpg"}
+                alt={`${blog.title} - Full Blog Image`}
+                className="w-full h-full object-cover transition-transform transform group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
           </div>
         )}
 
