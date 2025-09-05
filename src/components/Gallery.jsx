@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback, useMemo } from "react";
+import { Helmet } from "react-helmet-async";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import galleryData from "../data/Gallery.json";
 import SkeletonLoader from "./SkeletonLoader";
@@ -19,14 +20,12 @@ const Gallery = () => {
   const openImage = (index) => setSelectedIndex(index);
   const closeImage = () => setSelectedIndex(null);
 
-  // Compute dynamic categories from JSON
   const categories = useMemo(() => {
     if (!gallery) return [];
     const cats = new Set(gallery.images.map((img) => img.category));
     return ["all", ...cats];
   }, [gallery]);
 
-  // Filter images based on selected category
   const filteredImages = useMemo(() => {
     if (!gallery) return [];
     return selectedCategory === "all"
@@ -34,7 +33,6 @@ const Gallery = () => {
       : gallery.images.filter((img) => img.category === selectedCategory);
   }, [gallery, selectedCategory]);
 
-  // Prev & Next image
   const prevImage = useCallback(() => {
     setSelectedIndex((prev) =>
       prev === 0 ? filteredImages.length - 1 : prev - 1
@@ -47,16 +45,13 @@ const Gallery = () => {
     );
   }, [filteredImages]);
 
-  // Keyboard navigation for lightbox
   useEffect(() => {
     if (selectedIndex === null) return;
-
     const handleKeyDown = (e) => {
       if (e.key === "Escape") closeImage();
       if (e.key === "ArrowLeft") prevImage();
       if (e.key === "ArrowRight") nextImage();
     };
-
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedIndex, prevImage, nextImage]);
@@ -86,13 +81,35 @@ const Gallery = () => {
       id="gallery"
       className="mt-24 bg-white dark:bg-black py-20 px-4 sm:px-6 md:px-10"
     >
+      {/* ✅ SEO Meta Tags */}
+      <Helmet>
+        <title>Gallery | Memorable Moments</title>
+        <meta
+          name="description"
+          content="Explore our gallery of memorable moments, featuring events, activities, and inspiring highlights."
+        />
+        <meta
+          name="keywords"
+          content="gallery, events, photos, memorable moments, activities"
+        />
+        <meta property="og:title" content="Gallery | Memorable Moments" />
+        <meta
+          property="og:description"
+          content="A collection of unforgettable events and inspiring activities."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourdomain.com/gallery" />
+        <meta
+          property="og:image"
+          content={filteredImages[0]?.src || "/default-image.jpg"}
+        />
+      </Helmet>
+
       <div className="max-w-7xl mx-auto">
-        {/* Title */}
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white">
           Memorable Moments
         </h2>
 
-        {/* Category Filters */}
         <div className="flex justify-center gap-4 mb-12 flex-wrap">
           {categories.map((cat) => (
             <button
@@ -112,7 +129,6 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* Grid of Images */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {filteredImages.slice(0, visibleCount).map((img, index) => (
             <div
@@ -123,13 +139,13 @@ const Gallery = () => {
               <img
                 src={img.src}
                 alt={img.alt}
+                loading="lazy"
                 className="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500 cursor-pointer"
               />
             </div>
           ))}
         </div>
 
-        {/* View More Button */}
         {visibleCount < filteredImages.length && (
           <div className="flex justify-center mt-8">
             <button
@@ -142,21 +158,17 @@ const Gallery = () => {
         )}
       </div>
 
-      {/* Fullscreen Lightbox */}
       {selectedIndex !== null && (
         <div
           className="fixed inset-0 bg-black/90 flex flex-col items-center justify-center z-50 animate-fadeIn"
           onClick={closeImage}
         >
-          {/* Close */}
           <button
             onClick={closeImage}
             className="absolute top-5 right-5 text-white p-2 rounded-full hover:bg-white/20"
           >
             <X size={28} />
           </button>
-
-          {/* Prev */}
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -166,8 +178,6 @@ const Gallery = () => {
           >
             <ChevronLeft size={36} />
           </button>
-
-          {/* Next */}
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -178,7 +188,6 @@ const Gallery = () => {
             <ChevronRight size={36} />
           </button>
 
-          {/* Image */}
           <div
             className="flex flex-col items-center gap-4"
             onClick={(e) => e.stopPropagation()}
