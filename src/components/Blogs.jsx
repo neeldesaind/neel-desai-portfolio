@@ -33,13 +33,13 @@ const Blogs = () => {
       id="blogs"
       className="bg-white dark:bg-black py-20 px-4 sm:px-6 md:px-10 mt-20"
     >
-      {/* Page SEO */}
       <Helmet>
         <title>Blogs | My Portfolio</title>
         <meta
           name="description"
-          content="Read my blogs about MERN stack, web development, performance optimization, and best coding practices."
+          content="Read out my blogs :)"
         />
+        <link rel="canonical" href="https://neeldesaind.vercel.app/blogs" />
         {blogs.map((b) => (
           <script
             key={b.slug}
@@ -49,11 +49,11 @@ const Blogs = () => {
                 "@context": "https://schema.org",
                 "@type": "BlogPosting",
                 headline: b.title,
-                image: b.image || "/assets/default-blog.jpg",
+                image: b.thumbnailImage || "/assets/default-blog.jpg",
                 datePublished: b.date,
                 author: { "@type": "Person", name: b.author || "Neel Desai" },
                 description: b.description,
-                url: `/blogs/${b.slug}`,
+                 url: `https://neeldesaind.vercel.app/blogs/${b.slug}`,
               }),
             }}
           />
@@ -86,10 +86,12 @@ const Blogs = () => {
                   aria-label={`Read full blog: ${blog.title}`}
                 >
                   <img
-                    src={blog.image || "/assets/default-blog.jpg"}
-                    alt={`${blog.title} - My Portfolio Blog`}
+                    src={
+                      blog.thumbnailImage || "/assets/default-blog-thumb.jpg"
+                    }
+                    alt={`${blog.title} - Thumbnail`}
                     loading="lazy"
-                    className="w-full h-48 object-cover transition-transform duration-500 transform group-hover:scale-105"
+                    className="w-full h-48 object-cover transition-transform transform group-hover:scale-105"
                   />
                 </Link>
               )}
