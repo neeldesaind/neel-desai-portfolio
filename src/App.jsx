@@ -18,9 +18,11 @@ import NotFound from "./components/NotFound.jsx";
 import Popup from "./components/Popup.jsx";
 import Preloader from "./components/Preloader.jsx";
 import Gallery from "./components/Gallery.jsx";
+import Blogs from "./components/Blogs.jsx";
 
 // ✅ Import Google Analytics Tracker
 import AnalyticsTracker from "./components/AnalyticsTracker.jsx";
+import BlogDetails from "./components/BlogDetails.jsx";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -33,36 +35,39 @@ function App() {
   if (loading) return <Preloader />;
 
   return (
-     <HelmetProvider>
-    <BrowserRouter>
-      {/* ✅ Track route changes for GA */}
-      <AnalyticsTracker />
+    <HelmetProvider>
+      <BrowserRouter>
+        {/* ✅ Track route changes for GA */}
+        <AnalyticsTracker />
 
-      <Popup />
-      <Header />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Home />
-              <About />
-              <Skills />
-              <Education />
-              <Experience />
-              <Projects />
-              <Certificates />
-              <Testimonials />
-              <Contact />
-              <ScrollToTop />
-            </>
-          }
-        />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+        <Popup />
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Home />
+                <About />
+                <Skills />
+                <Education />
+                <Experience />
+                <Projects />
+                <Certificates />
+                <Testimonials />
+                <Contact />
+                <ScrollToTop />
+              </>
+            }
+          />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:slug" element={<BlogDetails />} />
+
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </HelmetProvider>
   );
 }
