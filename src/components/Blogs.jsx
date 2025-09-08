@@ -39,7 +39,7 @@ const Blogs = () => {
           name="description"
           content="Read out my blogs :)"
         />
-        <link rel="canonical" href="https://neeldesaind.vercel.app/blogs" />
+        <link rel="canonical" href="https://neeldesai.in/blogs" />
         {blogs.map((b) => (
           <script
             key={b.slug}
@@ -53,7 +53,7 @@ const Blogs = () => {
                 datePublished: b.date,
                 author: { "@type": "Person", name: b.author || "Neel Desai" },
                 description: b.description,
-                 url: `https://neeldesaind.vercel.app/blogs/${b.slug}`,
+                 url: `https://neeldesai.in/blogs/${b.slug}`,
               }),
             }}
           />
