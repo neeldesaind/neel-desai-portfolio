@@ -1,5 +1,6 @@
 import * as LucideIcons from 'lucide-react';
 import socialLinksJson from '../data/SocialLinks.json';
+import React from 'react';
 
 const Footer = () => {
   return (
@@ -38,3 +39,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
