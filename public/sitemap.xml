@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://neeldesaind.vercel.app/</loc>
+    <loc>https://www.neeldesai.in/</loc>
     <lastmod>2025-07-28</lastmod>
   </url>
   <url>
-    <loc>https://neeldesaind.vercel.app/gallery</loc>
-    <lastmod>2025-09-05</lastmod>
+    <loc>https://www.neeldesai.in/p/gallery</loc>
+    <lastmod>2025-09-08</lastmod>
   </url>
     <url>
-    <loc>https://neeldesaind.vercel.app/blogs</loc>
-    <lastmod>2025-09-05</lastmod>
+    <loc>https://www.neeldesai.in/blogs</loc>
+    <lastmod>2025-09-08</lastmod>
   </url>
 </urlset>
