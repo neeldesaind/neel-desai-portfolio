@@ -3,6 +3,7 @@ import experienceJson from '../data/Experience.json';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { useTheme } from '../Hooks/useTheme';
+import React from 'react';
 
 const Experience = () => {
   const { isDark } = useTheme();
@@ -153,3 +154,4 @@ const Experience = () => {
 };
 
 export default Experience;
+
