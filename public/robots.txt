@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: 
+Allow: /
 Disallow: /cgi-bin/
-Sitemap: https://www.neeldesai.in/sitemap.xml
+Sitemap: https://neeldesai.in/sitemap.xml
