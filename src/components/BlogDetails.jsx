@@ -1,6 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 import blogsJson from "../data/Blogs.json";
 import { Helmet } from "react-helmet-async";
+import React from 'react';
+
 
 const BlogDetails = () => {
   const { slug } = useParams();
