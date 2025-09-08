@@ -1,4 +1,6 @@
 import certsJson from '../data/Certficate.json';
+import React from 'react';
+
 
 const Certificates = () => {
   const [visibleCount, setVisibleCount] = React.useState(3);
@@ -68,3 +70,4 @@ const Certificates = () => {
 };
 
 export default Certificates;
+
