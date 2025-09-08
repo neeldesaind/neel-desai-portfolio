@@ -19,6 +19,8 @@ import Popup from "./components/Popup.jsx";
 import Preloader from "./components/Preloader.jsx";
 import Gallery from "./components/Gallery.jsx";
 import Blogs from "./components/Blogs.jsx";
+import { Analytics } from "@vercel/analytics/react"
+
 
 // ✅ Import Google Analytics Tracker
 import AnalyticsTracker from "./components/AnalyticsTracker.jsx";
@@ -39,6 +41,7 @@ function App() {
       <BrowserRouter>
         {/* ✅ Track route changes for GA */}
         <AnalyticsTracker />
+         <Analytics />
 
         <Popup />
         <Header />
