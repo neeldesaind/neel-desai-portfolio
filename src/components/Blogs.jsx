@@ -1,32 +1,17 @@
-import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import blogsJson from "../data/Blogs.json";
-import SkeletonLoader from "./SkeletonLoader";
 
 const Blogs = () => {
-  const [blogs, setBlogs] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [visibleCount, setVisibleCount] = useState(3);
-  const [expandedBlogs, setExpandedBlogs] = useState({});
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setBlogs(blogsJson);
-      setLoading(false);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
+  const [visibleCount, setVisibleCount] = React.useState(3);
+  const [expandedBlogs, setExpandedBlogs] = React.useState({});
 
   const handleShowMore = () => setVisibleCount((prev) => prev + 3);
   const toggleReadMore = (index) =>
     setExpandedBlogs((prev) => ({ ...prev, [index]: !prev[index] }));
 
-  const displayedBlogs = loading
-    ? Array.from({ length: 3 })
-    : blogs.slice(0, visibleCount);
-
-  const hasMoreToShow = visibleCount < blogs.length;
+  const displayedBlogs = blogsJson.slice(0, visibleCount);
+  const hasMoreToShow = visibleCount < blogsJson.length;
 
   return (
     <section
@@ -35,12 +20,9 @@ const Blogs = () => {
     >
       <Helmet>
         <title>Blogs | My Portfolio</title>
-        <meta
-          name="description"
-          content="Read out my blogs :)"
-        />
+        <meta name="description" content="Read out my blogs :)" />
         <link rel="canonical" href="https://neeldesai.in/blogs" />
-        {blogs.map((b) => (
+        {blogsJson.map((b) => (
           <script
             key={b.slug}
             type="application/ld+json"
@@ -53,7 +35,7 @@ const Blogs = () => {
                 datePublished: b.date,
                 author: { "@type": "Person", name: b.author || "Neel Desai" },
                 description: b.description,
-                 url: `https://neeldesai.in/blogs/${b.slug}`,
+                url: `https://neeldesai.in/blogs/${b.slug}`,
               }),
             }}
           />
@@ -61,114 +43,96 @@ const Blogs = () => {
       </Helmet>
 
       <div className="max-w-6xl mx-auto">
-        {loading ? (
-          <div className="mb-12 flex justify-center">
-            <SkeletonLoader width="w-56" height="h-10" />
-          </div>
-        ) : (
-          <h2 className="text-3xl sm:text-4xl font-semibold text-center text-gray-900 dark:text-white mb-12">
-            Blogs
-          </h2>
-        )}
+        <h2 className="text-3xl sm:text-4xl font-semibold text-center text-gray-900 dark:text-white mb-12">
+          Blogs
+        </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedBlogs.map((blog, i) => (
             <article
-              key={blog?.slug || i}
+              key={blog.slug}
               className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
             >
-              {loading ? (
-                <SkeletonLoader width="w-full" height="h-48" />
-              ) : (
-                <Link
-                  to={`/blogs/${blog.slug}`}
-                  className="block group overflow-hidden rounded-t-xl"
-                  aria-label={`Read full blog: ${blog.title}`}
-                >
-                  <img
-                    src={
-                      blog.thumbnailImage || "/assets/default-blog-thumb.jpg"
-                    }
-                    alt={`${blog.title} - Thumbnail`}
-                    loading="lazy"
-                    className="w-full h-48 object-cover transition-transform transform group-hover:scale-105"
-                  />
-                </Link>
-              )}
+              {/* Thumbnail */}
+              <Link
+                to={`/blogs/${blog.slug}`}
+                className="block group overflow-hidden rounded-t-xl"
+                aria-label={`Read full blog: ${blog.title}`}
+              >
+                <img
+                  src={blog.thumbnailImage || "/assets/default-blog-thumb.jpg"}
+                  alt={`${blog.title} - Thumbnail`}
+                  loading="lazy"
+                  className="w-full h-48 object-cover transition-transform transform group-hover:scale-105"
+                />
+              </Link>
 
               <div className="p-5 space-y-3">
-                {loading ? (
-                  <>
-                    <SkeletonLoader width="w-24" height="h-4" />
-                    <SkeletonLoader width="w-3/4" height="h-6" />
-                  </>
-                ) : (
-                  <>
-                    <header>
-                      <span className="block text-xs text-gray-500 dark:text-gray-400">
-                        {new Date(blog.date).toLocaleDateString("en-US", {
-                          day: "numeric",
-                          month: "long",
-                          year: "numeric",
-                        })}{" "}
-                        • {blog.readingTime} read • {blog.category}
-                      </span>
+                {/* Header */}
+                <header>
+                  <span className="block text-xs text-gray-500 dark:text-gray-400">
+                    {new Date(blog.date).toLocaleDateString("en-US", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric",
+                    })}{" "}
+                    • {blog.readingTime} read • {blog.category}
+                  </span>
 
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mt-1">
-                        {blog.title}
-                      </h3>
-                    </header>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mt-1">
+                    {blog.title}
+                  </h3>
+                </header>
 
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      {expandedBlogs[i]
-                        ? blog.description
-                        : blog.description.split(" ").slice(0, 20).join(" ") +
-                          (blog.description.split(" ").length > 20
-                            ? "..."
-                            : "")}
+                {/* Description */}
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  {expandedBlogs[i]
+                    ? blog.description
+                    : blog.description.split(" ").slice(0, 20).join(" ") +
+                      (blog.description.split(" ").length > 20 ? "..." : "")}
 
-                      {blog.description.split(" ").length > 20 && (
-                        <button
-                          onClick={() => toggleReadMore(i)}
-                          className="ml-2 text-indigo-600 dark:text-indigo-300 font-medium hover:underline"
-                          aria-label={
-                            expandedBlogs[i]
-                              ? "Read less of blog description"
-                              : "Read more of blog description"
-                          }
-                        >
-                          {expandedBlogs[i] ? "Read Less" : "Read More"}
-                        </button>
-                      )}
-                    </p>
+                  {blog.description.split(" ").length > 20 && (
+                    <button
+                      onClick={() => toggleReadMore(i)}
+                      className="ml-2 text-indigo-600 dark:text-indigo-300 font-medium hover:underline"
+                      aria-label={
+                        expandedBlogs[i]
+                          ? "Read less of blog description"
+                          : "Read more of blog description"
+                      }
+                    >
+                      {expandedBlogs[i] ? "Read Less" : "Read More"}
+                    </button>
+                  )}
+                </p>
 
-                    <div className="flex flex-wrap gap-2 pt-2">
-                      {blog.tags.map((tag, idx) => (
-                        <span
-                          key={idx}
-                          className="px-2 py-1 text-xs font-medium bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-300 rounded-full"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {blog.tags.map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className="px-2 py-1 text-xs font-medium bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-300 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
 
-                    <div className="pt-4 flex justify-center">
-                      <Link
-                        to={`/blogs/${blog.slug}`}
-                        className="inline-block px-4 py-2 text-sm font-medium text-white bg-black dark:bg-white dark:text-black rounded-md hover:opacity-90 transition"
-                      >
-                        Read Full Blog
-                      </Link>
-                    </div>
-                  </>
-                )}
+                {/* Read Full Blog */}
+                <div className="pt-4 flex justify-center">
+                  <Link
+                    to={`/blogs/${blog.slug}`}
+                    className="inline-block px-4 py-2 text-sm font-medium text-white bg-black dark:bg-white dark:text-black rounded-md hover:opacity-90 transition"
+                  >
+                    Read Full Blog
+                  </Link>
+                </div>
               </div>
             </article>
           ))}
         </div>
 
-        {!loading && hasMoreToShow && (
+        {hasMoreToShow && (
           <div className="text-center mt-10">
             <button
               onClick={handleShowMore}
