@@ -1,4 +1,5 @@
 import educationJson from '../data/Education.json';
+import React from 'react';
 
 const Education = () => {
   return (
@@ -45,3 +46,4 @@ const Education = () => {
 };
 
 export default Education;
+
