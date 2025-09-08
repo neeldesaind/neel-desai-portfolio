@@ -1,4 +1,5 @@
 import aboutData from '../data/About.json';
+import React from 'react';
 
 const About = () => {
   const about = aboutData;
@@ -41,3 +42,4 @@ const About = () => {
 };
 
 export default About;
+
