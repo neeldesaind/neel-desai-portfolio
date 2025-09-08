@@ -1,92 +1,5 @@
 [
   {
-    "slug": "social-media-blessing-or-curse",
-    "title": "Is Social Media a Blessing or a Curse?",
-    "date": "2025-09-05",
-   "thumbnailImage": "/assets/gallery/blog/blog-thumbnail-01.webp",
-    "image": "/assets/gallery/blog/blog-detail-01.webp",
-    "description": "Exploring the positive and negative impacts of social media in our daily lives and society as a whole.",
-    "tags": ["Social Media", "Technology", "Society", "Digital Life"],
-    "category": "Opinion",
-    "author": "Neel H. Desai",
-    "readingTime": "6 min",
-    "canonical": "/blogs/social-media-blessing-or-curse",
-    "relatedBlogs": [],
-    "metaKeywords": ["social media impact", "digital life", "technology trends", "social media pros and cons"],
-    "content": [
-      {
-        "type": "paragraph",
-        "text": "Social media has become an inseparable part of our lives. From staying connected with friends to accessing real-time news, it influences how we communicate, learn, and even think. But the big question remains: is social media a blessing or a curse?"
-      },
-      {
-        "type": "heading",
-        "text": "The Blessings of Social Media"
-      },
-      {
-        "type": "paragraph",
-        "text": "One cannot deny the advantages of social media. It allows people to stay connected across the globe, making long-distance relationships easier to maintain. For businesses, it is a powerful tool for marketing, reaching millions at minimal cost. Social media also acts as a platform for raising awareness, supporting social causes, and giving a voice to the voiceless."
-      },
-      {
-        "type": "list",
-        "items": [
-          "Instant communication and global connectivity",
-          "Access to real-time news and information",
-          "Opportunities for businesses and entrepreneurs",
-          "Platforms for self-expression and creativity",
-          "Raising awareness about social and environmental issues"
-        ]
-      },
-      {
-        "type": "heading",
-        "text": "The Curses of Social Media"
-      },
-      {
-        "type": "paragraph",
-        "text": "Despite its benefits, social media has a darker side. Excessive use often leads to addiction, decreased productivity, and mental health challenges such as anxiety and depression. Fake news spreads rapidly, misleading millions. Privacy concerns are also at an all-time high, with personal data being collected and misused. Cyberbullying and online harassment have made digital spaces unsafe for many."
-      },
-      {
-        "type": "list",
-        "items": [
-          "Addiction and reduced productivity",
-          "Negative impact on mental health",
-          "Spread of misinformation and fake news",
-          "Privacy breaches and data misuse",
-          "Cyberbullying and online harassment"
-        ]
-      },
-      {
-        "type": "heading",
-        "text": "Striking a Balance"
-      },
-      {
-        "type": "paragraph",
-        "text": "So, is social media a blessing or a curse? The answer depends on how we use it. When used wisely, it can connect, educate, and empower. But when overused or misused, it can harm our mental well-being and social harmony. Striking a balance between digital life and real life is the key."
-      },
-      {
-        "type": "heading",
-        "text": "Professional Tips for Responsible Use"
-      },
-      {
-        "type": "list",
-        "items": [
-          "Set daily limits for social media usage",
-          "Verify information before sharing",
-          "Promote positivity and avoid conflicts online",
-          "Use social media to learn new skills",
-          "Regularly review privacy settings"
-        ]
-      },
-      {
-        "type": "heading",
-        "text": "Conclusion"
-      },
-      {
-        "type": "paragraph",
-        "text": "Social media, like any other tool, is neither purely good nor purely bad. It is both a blessing and a curse, depending on our approach. By using it responsibly, setting healthy boundaries, and promoting positive digital habits, we can turn it into more of a blessing than a curse."
-      }
-    ]
-  },
-  {
   "slug": "developer-networking-github-linkedin-career-growth",
   "title": "Beyond Code: Networking for Developers on GitHub and LinkedIn",
   "date": "2025-09-08",
@@ -183,5 +96,92 @@
       "text": "Networking for developers is no longer optional—it’s a career accelerator. GitHub highlights your coding expertise, while LinkedIn amplifies your professional identity and connections. Together, they can unlock job offers, freelance gigs, and global collaborations. Start small, stay consistent, and let your online presence open doors to growth."
     }
   ]
-}
+},
+  {
+    "slug": "social-media-blessing-or-curse",
+    "title": "Is Social Media a Blessing or a Curse?",
+    "date": "2025-09-05",
+   "thumbnailImage": "/assets/gallery/blog/blog-thumbnail-01.webp",
+    "image": "/assets/gallery/blog/blog-detail-01.webp",
+    "description": "Exploring the positive and negative impacts of social media in our daily lives and society as a whole.",
+    "tags": ["Social Media", "Technology", "Society", "Digital Life"],
+    "category": "Opinion",
+    "author": "Neel H. Desai",
+    "readingTime": "6 min",
+    "canonical": "/blogs/social-media-blessing-or-curse",
+    "relatedBlogs": [],
+    "metaKeywords": ["social media impact", "digital life", "technology trends", "social media pros and cons"],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Social media has become an inseparable part of our lives. From staying connected with friends to accessing real-time news, it influences how we communicate, learn, and even think. But the big question remains: is social media a blessing or a curse?"
+      },
+      {
+        "type": "heading",
+        "text": "The Blessings of Social Media"
+      },
+      {
+        "type": "paragraph",
+        "text": "One cannot deny the advantages of social media. It allows people to stay connected across the globe, making long-distance relationships easier to maintain. For businesses, it is a powerful tool for marketing, reaching millions at minimal cost. Social media also acts as a platform for raising awareness, supporting social causes, and giving a voice to the voiceless."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Instant communication and global connectivity",
+          "Access to real-time news and information",
+          "Opportunities for businesses and entrepreneurs",
+          "Platforms for self-expression and creativity",
+          "Raising awareness about social and environmental issues"
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "The Curses of Social Media"
+      },
+      {
+        "type": "paragraph",
+        "text": "Despite its benefits, social media has a darker side. Excessive use often leads to addiction, decreased productivity, and mental health challenges such as anxiety and depression. Fake news spreads rapidly, misleading millions. Privacy concerns are also at an all-time high, with personal data being collected and misused. Cyberbullying and online harassment have made digital spaces unsafe for many."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Addiction and reduced productivity",
+          "Negative impact on mental health",
+          "Spread of misinformation and fake news",
+          "Privacy breaches and data misuse",
+          "Cyberbullying and online harassment"
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Striking a Balance"
+      },
+      {
+        "type": "paragraph",
+        "text": "So, is social media a blessing or a curse? The answer depends on how we use it. When used wisely, it can connect, educate, and empower. But when overused or misused, it can harm our mental well-being and social harmony. Striking a balance between digital life and real life is the key."
+      },
+      {
+        "type": "heading",
+        "text": "Professional Tips for Responsible Use"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Set daily limits for social media usage",
+          "Verify information before sharing",
+          "Promote positivity and avoid conflicts online",
+          "Use social media to learn new skills",
+          "Regularly review privacy settings"
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Conclusion"
+      },
+      {
+        "type": "paragraph",
+        "text": "Social media, like any other tool, is neither purely good nor purely bad. It is both a blessing and a curse, depending on our approach. By using it responsibly, setting healthy boundaries, and promoting positive digital habits, we can turn it into more of a blessing than a curse."
+      }
+    ]
+  }
 ]
