@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
-Sitemap: https://neeldesaind.vercel.app/sitemap.xml
+Sitemap: https://www.neeldesai.in/sitemap.xml
