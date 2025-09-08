@@ -2,6 +2,7 @@ import { useState, useMemo, useCallback } from "react";
 import { Helmet } from "react-helmet-async";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import galleryData from "../data/Gallery.json";
+import React from 'react';
 
 const Gallery = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
